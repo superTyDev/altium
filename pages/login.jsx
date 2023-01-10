@@ -26,37 +26,37 @@ export default function Login() {
     <>
       <div className="navSpacer"></div>
 
-      <div className="login">
-        <div className="login__container">
+      <div className={styles.login}>
+        <div className={styles.login__container}>
           <h1>Login</h1>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-envelope"></i>
             <input
               type="text"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail Address"
             />
           </div>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-key"></i>
             <input
               type="password"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
           </div>
           <button
-            className="login__btn"
+            className={styles.login__btn}
             onClick={() => logInWithEmailAndPassword(email, password)}
           >
             Login
           </button>
           <button
-            className="login__btn login__google"
+            className={[styles.login__btn, styles.login__google]}
             onClick={signInWithGoogle}
           >
             Login with Google
