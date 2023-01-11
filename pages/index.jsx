@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import Script from "next/script";
 import Link from "next/link";
+import Image from "next/image";
 
 function rotateRocket(evt) {
 	var rocket = document.querySelector("#model");
@@ -81,7 +82,7 @@ function svgAnimation() {
 				1.05 -
 				(-stepCont?.getBoundingClientRect().top +
 					document.documentElement.clientHeight) /
-					stepContHeight;
+				stepContHeight;
 		});
 	}
 }
@@ -146,9 +147,10 @@ export default function Home() {
 				<div className="slider">
 					<div className="slide-track">
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/hiers.jpg?v=1670451024656"
+								alt="John Mayer Photo"
 							/>
 							<div className="right">
 								<p>
@@ -159,9 +161,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Emmerling-1.jpg?v=1670698314668"
+								alt="Carla Jenkins Photo"
 							/>
 							<div className="right">
 								<p>
@@ -173,9 +176,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Crosby.jpg?v=1670698318370"
+								alt="Denise Whaler Photo"
 							/>
 							<div className="right">
 								<p>
@@ -187,9 +191,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Durham-1.jpg?v=1670698309160"
+								alt="Josh Kent Photo"
 							/>
 							<div className="right">
 								<p>
@@ -202,9 +207,10 @@ export default function Home() {
 						</div>
 						{/* Must be identical to above (if you add more change the number under .slider) */}
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/hiers.jpg?v=1670451024656"
+								alt="John Mayer Photo"
 							/>
 							<div className="right">
 								<p>
@@ -215,9 +221,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Emmerling-1.jpg?v=1670698314668"
+								alt="Carla Jenkins Photo"
 							/>
 							<div className="right">
 								<p>
@@ -229,9 +236,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Crosby.jpg?v=1670698318370"
+								alt="Denise Whaler Photo"
 							/>
 							<div className="right">
 								<p>
@@ -243,9 +251,10 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="slide">
-							<img
+							<Image
 								className="left"
 								src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Durham-1.jpg?v=1670698309160"
+								alt="Josh Kent Photo"
 							/>
 							<div className="right">
 								<p>
@@ -259,12 +268,12 @@ export default function Home() {
 					</div>
 				</div>
 				<p>
-					Space flight is for everyone! Learn more about the process your go
+					Space flight is for everyone! Learn more about the process you will go
 					through in our flights or view upcoming missions.
 				</p>
 				<div className="buttonCont">
 					<Link href="#steps" className="button">
-						What's Entailed?
+						What&apos;s Entailed?
 					</Link>
 					<Link href="/quote" className="button">
 						View Missions
@@ -303,7 +312,7 @@ export default function Home() {
 								className="buttonNext fa-solid fa-arrow-down"
 							></Link>
 						</div>
-						{/* <img src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/astrosuit.svg?v=1670892262011" alt="Space Suit" height="400px" /> */}
+						{/* <Image src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/astrosuit.svg?v=1670892262011" alt="Space Suit" height="400px" /> */}
 					</div>
 				</div>
 				<div id="steps2">
@@ -328,7 +337,7 @@ export default function Home() {
 					<div className="text left">
 						<h3>Fitness & Training Course</h3>
 						<p>
-							To make sure you have the best time, we've developed a short
+							To make sure you have the best time, we developed a short
 							course to prepare you for space.
 						</p>
 						<div className="buttonCont">
@@ -346,8 +355,8 @@ export default function Home() {
 					<div className="text right">
 						<h3>Countdown</h3>
 						<p>
-							That's it! It's launch day and you're ready. Arrive 2 hours before
-							launch time and before you know it you'll be in space.
+							Tha it! I launch day and yoe ready. Arrive 2 hours before
+							launch time and before you know it yol be in space.
 						</p>
 					</div>
 				</div>
@@ -359,11 +368,11 @@ export default function Home() {
 						<div className="innerCard">
 							<h3>Stratosphere</h3>
 							<p>
-								Take a day trip into space. You'll see amazing views and
+								Take a day trip into space. Yol see amazing views and
 								experience zero g without the hassle of being an astronaut.
 							</p>
 						</div>
-						<img
+						<Image
 							src="https://cdn.mos.cms.futurecdn.net/yRQNRdNU5fiJZ7AQBRpMkk-970-80.jpg.webp"
 							alt="Earth's Stratosphere"
 						/>
@@ -377,7 +386,7 @@ export default function Home() {
 								opportunity to witness the galaxy on a space walk.
 							</p>
 						</div>
-						<img
+						<Image
 							src="https://www.freepnglogos.com/uploads/moon-png/moon-labyr-nth-deviantart-0.png"
 							alt="Full Moon"
 						/>
@@ -390,7 +399,7 @@ export default function Home() {
 								weightless environment.
 							</p>
 						</div>
-						<img
+						<Image
 							src="https://www.nasa.gov/sites/default/files/thumbnails/image/final_configuration_of_iss.jpg"
 							alt="International Space Station in Front of the Earth"
 						/>
@@ -409,9 +418,9 @@ export default function Home() {
 
 				<h2>The Packing List</h2>
 				<p>
-					Too soon to start packing? We don't think so. Space travel doesn't
+					Too soon to start packing? We do think so. Space travel does
 					have to be complicated. Our space-ready course can be completed in{" "}
-					<strong>2</strong> weeks, it's that simple.
+					<strong>2</strong> weeks, it&apos;s that simple.
 				</p>
 				<p>
 					For any of our flights clients will take an brief online class

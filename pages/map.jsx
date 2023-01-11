@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Helmet } from "react-helmet-async";
-import { Link } from "wouter";
+import Image from "next/image";
+import Script from "next/script";
+
 // const [style, trigger] = useWiggle({ x: 50, rotation: 1, scale: 1.2 });
 function rotateEarth(evt) {
   var earth = document.querySelector("#model");
@@ -12,21 +13,19 @@ function rotateEarth(evt) {
   var distance = ((center_x - mouse_x) / earthRect.width) * 360;
   earth.setAttribute("camera-orbit", `${distance}deg 70deg 100%`);
 }
-/**
- * The template function defines the component that makes up the template page
- * This component needs to be attached to the /template path in /src/components/router.jsx
- */
+
 // modified 9/28/22
 export default function Map() {
-  document.addEventListener("mousemove", rotateEarth);
+  if (typeof window !== "undefined") {
+    document.addEventListener("mousemove", rotateEarth);
+  }
+
   return (
     <>
-      <Helmet>
-        <script
-          type="module"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-        ></script>
-      </Helmet>
+      <Script
+        type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+      ></Script>
 
       <div className="navSpacer"></div>
       <div className="page">
@@ -52,10 +51,10 @@ export default function Map() {
       <div>
         <div>
           <p>hello</p>
-<p>https://solarsystem.nasa.gov/moons/earths-moon/overview/</p>
+          <p>https://solarsystem.nasa.gov/moons/earths-moon/overview/</p>
           <div classname="heroRight">
             <div className="spacer"></div>
-            <img src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/istockphoto-1314510269-612x612.jpg?v=1664383228152"></img>
+            <Image src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/istockphoto-1314510269-612x612.jpg?v=1664383228152" alt="Full Moon Photo" />
             <div className="spacer"></div>
           </div>
         </div>

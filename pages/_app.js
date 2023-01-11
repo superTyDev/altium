@@ -1,5 +1,7 @@
 import { useEffect } from "react";
-import '../styles/globals.css'
+import '../styles/globals.css';
+import Link from "next/link";
+import Image from "next/image";
 
 function darkNav() {
   if (window.scrollY > 15) {
@@ -43,25 +45,25 @@ export default function App({ Component, pageProps }) {
 
   return (
     <><nav>
-      <a href="/" id="logo">
+      <Link href="/" id="logo">
         <h2>
-          <img
+          <Image
             height="24px"
             src="https://cdn.glitch.global/2ed4b08e-aa2f-4ed2-9f56-1225d5edadb6/touch-icon.png?v=1661874307713"
             alt="Eagle Icon" />
           Altium Aeronautics
         </h2>
-      </a>
-      <a
+      </Link>
+      <Link
         href="#menu"
         onClick={(e) => {
           document.querySelector(".sideNav").classList.toggle("expand");
         }}
       >
         ☰
-      </a>
-      <a href="/login">Login</a>
-      <a href="/quote">Buy a Ticket</a>
+      </Link>
+      <Link href="/login">Login</Link>
+      <Link href="/quote">Buy a Ticket</Link>
     </nav><div className="sideNav">
         <div className="sideNavInner">
           <div>
@@ -76,34 +78,34 @@ export default function App({ Component, pageProps }) {
             <hr />
           </div>
           <div>
-            <a href="/about" onClick={closeNavLink}>
+            <Link href="/about" onClick={closeNavLink}>
               About<i className="fa-solid fa-circle-info"></i>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/services" onClick={closeNavLink}>
+            <Link href="/services" onClick={closeNavLink}>
               Services<i className="fa-solid fa-handshake-simple"></i>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/contact" onClick={closeNavLink}>
+            <Link href="/contact" onClick={closeNavLink}>
               Contact <i className="fa-solid fa-phone"></i>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/login" onClick={closeNavLink}>
+            <Link href="/login" onClick={closeNavLink}>
               Login <i className="fa-solid fa-circle-user"></i>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/dashboard" onClick={closeNavLink}>
+            <Link href="/dashboard" onClick={closeNavLink}>
               Dashboard <i className="fa-solid fa-chart-line"></i>
-            </a>
+            </Link>
           </div>
           <div>
-            <a href="/calendar" onClick={closeNavLink}>
+            <Link href="/calendar" onClick={closeNavLink}>
               Calendar <i className="fa-solid fa-calendar-day"></i>
-            </a>
+            </Link>
           </div>
           <div className="spacer"></div>
         </div>
@@ -115,13 +117,13 @@ export default function App({ Component, pageProps }) {
       <footer className="footer">
         <div className="title">Altium Aeronautics</div>
         <div className="links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/login">Login</a>
-          <a href="/cites">Cites</a>
-          <a href="/map">Map</a>
-          <a href="/feedback">Feedback</a>
-          <a href="/sitemap">Sitemap</a>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+          <Link href="/login">Login</Link>
+          <Link href="/cites">Cites</Link>
+          <Link href="/map">Map</Link>
+          <Link href="/feedback">Feedback</Link>
+          <Link href="/sitemap">Sitemap</Link>
         </div>
         <div className="copyright">
           © Tyson McLaws, Connor Altvater 2022. No Rights Reserved.

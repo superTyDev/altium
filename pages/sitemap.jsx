@@ -1,4 +1,6 @@
 import * as React from "react";
+import Link from "next/link"
+
 /**
  * The template function defines the component that makes up the template page
  * This component needs to be attached to the /template path in /src/components/router.jsx
@@ -11,25 +13,25 @@ export default function Sitemap() {
       <div className="page">
         <h1>Site map</h1>
         <h2>main</h2>
-        <a href="/" className="button">
+        <Link href="/" className="button">
           Home
-        </a>
-        <a href="/login" className="button">
+        </Link>
+        <Link href="/login" className="button">
           Login
-        </a>
-        <a href="/cites" className="button">
+        </Link>
+        <Link href="/cites" className="button">
           Cites
-        </a>
+        </Link>
         <h2>other</h2>
-        <a href="/about" className="button">
+        <Link href="/about" className="button">
           About
-        </a>
-        <a href="/feedback" className="button">
+        </Link>
+        <Link href="/feedback" className="button">
           Feedback
-        </a>
-        <a href="/map" className="button">
+        </Link>
+        <Link href="/map" className="button">
           Map
-        </a>
+        </Link>
       </div>
     </>
   );

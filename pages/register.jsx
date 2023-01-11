@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { useRouter } from 'next/router';
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import {
@@ -7,14 +9,14 @@ import {
   signInWithGoogle,
 } from "./../components/fbauth.js";
 
-import "../styles/Login.module.css";
+import styles from "../styles/Login.module.css";
 
 export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [user, loading, error] = useAuthState(auth);
-  const [location, setLocation] = useLocation();
+  const router = useRouter()
 
   const register = () => {
     if (!name) alert("Please enter name");
@@ -23,57 +25,57 @@ export default function Register() {
 
   useEffect(() => {
     if (loading) return;
-    if (user) setLocation("/dashboard");
-  }, [user, loading]);
+    if (user) router.push("/dashboard");
+  }, [user, loading, router]);
 
   return (
     <>
       <div className="navSpacer"></div>
 
-      <div className="login">
-        <div className="login__container">
+      <div className={styles.login}>
+        <div className={styles.login__container}>
           <h1>Register</h1>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-user"></i>
             <input
               type="text"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Full Name"
             />
           </div>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-envelope"></i>
             <input
               type="text"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail Address"
             />
           </div>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-key"></i>
             <input
               type="password"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
             />
           </div>
-          <button className="login__btn" onClick={register}>
+          <button className={styles.login__btn} onClick={register}>
             Register
           </button>
           <button
-            className="login__btn login__google"
+            className={[styles.login__btn, styles.login__google]}
             onClick={signInWithGoogle}
           >
             Register with Google
           </button>
           <div>
-            Already have an account? <a to="/">Login</a> now.
+            Already have an account? <Link href="/">Login</Link> now.
           </div>
           <div>Note: Login with google is blocked on PCSP computers</div>
         </div>

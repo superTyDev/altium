@@ -1,43 +1,46 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, useLocation } from "wouter";
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 import { auth, sendPasswordReset } from "./../components/fbauth.js";
-import "./../styles/login.css";
+import styles from "../styles/Login.module.css";
 
 export default function Reset() {
   const [email, setEmail] = useState("");
   const [user, loading, error] = useAuthState(auth);
-  const [location, setLocation] = useLocation();
+  const router = useRouter()
+
 
   useEffect(() => {
     if (loading) return;
-    if (user) setLocation("/dashboard");
-  }, [user, loading]);
+    if (user) router.push("/dashboard");
+  }, [user, loading, router]);
+
   return (
     <>
       <div className="navSpacer"></div>
-      <div className="login">
-        <div className="login__container">
+      <div className={styles.login}>
+        <div className={styles.login__container}>
           <h1>Reset</h1>
-          <div className="input__container">
+          <div className={styles.input__container}>
             <i className="fa fa-user"></i>
             <input
               type="text"
-              className="login__textBox"
+              className={styles.login__textBox}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="E-mail Address"
             />
           </div>
           <button
-            className="login__btn"
+            className={styles.login__btn}
             onClick={() => sendPasswordReset(email)}
           >
             Send password reset email
           </button>
           <div>
-            Don't have an account? <a to="/register">Register</a> now.
+            Do have an account? <Link href="/register">Register</Link> now.
           </div>
         </div>
       </div>

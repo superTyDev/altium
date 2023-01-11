@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import Link from "next/link"
+import { useRouter } from 'next/router'
 
 import {
   auth,
@@ -13,15 +15,15 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
-  const [location, setLocation] = useLocation();
+  const router = useRouter()
 
   useEffect(() => {
     if (loading) {
       // maybe trigger a loading screen
       return;
     }
-    if (user) setLocation("/dashboard");
-  }, [user, loading]);
+    if (user) router.push("/dashboard");
+  }, [user, loading, router]);
   return (
     <>
       <div className="navSpacer"></div>
@@ -62,10 +64,10 @@ export default function Login() {
             Login with Google
           </button>
           <div>
-            <a to="/reset">Forgot Password</a>
+            <Link href="/reset">Forgot Password</Link>
           </div>
           <div>
-            Don't have an account? <a to="/register">Register</a> now.
+            Do have an account? <Link href="/register">Register</Link> now.
           </div>
           <div>Note: Login with google is blocked on PCSP computers</div>
         </div>

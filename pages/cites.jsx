@@ -1,9 +1,5 @@
 import * as React from "react";
-
-/**
- * The cites function defines the component that makes up the cites page
- * This component needs to be attached to the /cites path in /src/components/router.jsx
- */
+import Link from "next/link";
 
 export default function Cites() {
   return (
@@ -18,37 +14,37 @@ export default function Cites() {
         </p>
         <ul>
           <li>
-            Rocket 3D file,{" "}
-            <a href="https://nasa3d.arc.nasa.gov/models">NASA 3D Resources</a>
+            Rocket 3D file,
+            <Link href="https://nasa3d.arc.nasa.gov/models">NASA 3D Resources</Link>
           </li>
           <li>
-            Space Panorama, <a href="https://www.hdri-hub.com">HDRI Hub</a>
+            Space Panorama, <Link href="https://www.hdri-hub.com">HDRI Hub</Link>
           </li>
           <li>
-            NASA Mobile Launcher,{" "}
-            <a href="https://www.nasa.gov/exploration/systems/sls/MLmoves.html">
+            NASA Mobile Launcher,
+            <Link href="https://www.nasa.gov/exploration/systems/sls/MLmoves.html">
               NASA Mobile Launcher
-            </a>
+            </Link>
           </li>
           <li>
-            Atmosphere Photograph,{" "}
-            <a href="https://www.livescience.com/64825-why-earth-has-an-atmosphere.html"></a>
+            Atmosphere Photograph,
+            <Link href="https://www.livescience.com/64825-why-earth-has-an-atmosphere.html"></Link>
           </li>
         </ul>
         <h2>Legal</h2>
         <h3>License</h3>
         <p>
-          Licensed under the Apache License, Version 2.0 (the "License"); you
+          Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you
           may not use the files except in compliance with the License. You may
           obtain a copy of the License at
           <br />
-          <a href="http://www.apache.org/licenses/LICENSE-2.0">
+          <Link href="http://www.apache.org/licenses/LICENSE-2.0">
             http://www.apache.org/licenses/LICENSE-2.0
-          </a>
+          </Link>
         </p>
         <p>
           Unless required by applicable law or agreed to in writing, software
-          distributed under the License is distributed on an "AS IS" BASIS,
+          distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
           implied. See the License for the specific language governing
           permissions and limitations under the License.
@@ -73,9 +69,8 @@ export default function Cites() {
           event you are severely harmed and need medical attention one can file
           a claim to
           <strong>
-            {" "}
-            <a href="mailto: notmyproblem@gmail.com">notmyproblem@gmail.com</a>
-          </strong>{" "}
+            <Link href="mailto: notmyproblem@gmail.com">notmyproblem@gmail.com</Link>
+          </strong>
           for a complementary gum stick. If you die we get your life insurance.
         </p>
         <p>
@@ -86,12 +81,12 @@ export default function Cites() {
 
         <p>
           This data protection declaration explains the type, scope and purpose
-          of the processing of personal data (hereinafter referred to as "data")
+          of the processing of personal data (hereinafter referred to as &quot;data&quot;)
           within our online offer and the websites, functions and content
           associated with it, as well as external online presences, such as our
           social media profile (hereinafter referred to as collectively referred
-          to as the "Online Offering"). With regard to the terms used, such as
-          "processing" or "person responsible", we refer to the definitions in
+          to as the &quot;Online Offering&quot;). With regard to the terms used, such as
+          &quot;processing&quot; or &quot;person responsible&quot;, we refer to the definitions in
           Article 4 of the General Data Protection Regulation (GDPR).
         </p>
 
@@ -112,7 +107,7 @@ export default function Cites() {
         <h4>Categories of data subjects</h4>
         <p>
           Visitors and users of the online offer (in the following we refer to
-          the persons concerned collectively as "users").
+          the persons concerned collectively as &quot;users&quot;).
         </p>
 
         <h4>purpose of processing</h4>
@@ -125,8 +120,8 @@ export default function Cites() {
 
         <h4>Terms used</h4>
         <p>
-          "Personal data" means any information relating to an identified or
-          identifiable natural person (hereinafter "data subject"); an
+          &quot;Personal data&quot; means any information relating to an identified or
+          identifiable natural person (hereinafter &quot;data subject&quot;); an
           identifiable natural person is one who can be identified directly or
           indirectly, in particular by means of assignment to an identifier such
           as a name, an identification number, location data, an online
@@ -136,14 +131,14 @@ export default function Cites() {
         </p>
 
         <p>
-          "Processing" is any process or series of processes carried out with or
+          &quot;Processing&quot; is any process or series of processes carried out with or
           without the aid of automated processes in connection with personal
           data. The term is broad and encompasses practically every handling of
           data.
         </p>
 
         <p>
-          "Pseudonymization" means the processing of personal data in such a way
+          &quot;Pseudonymization&quot; means the processing of personal data in such a way
           that the personal data can no longer be assigned to a specific data
           subject without the use of additional information, provided that this
           additional information is stored separately and is subject to
@@ -152,7 +147,7 @@ export default function Cites() {
         </p>
 
         <p>
-          "Profiling" any type of automated processing of personal data,
+          &quot;Profiling&quot; any type of automated processing of personal data,
           consisting in using this personal data to evaluate certain personal
           aspects relating to a natural person, in particular aspects related to
           work performance, economic situation, health, personal Analyze or
@@ -161,13 +156,13 @@ export default function Cites() {
         </p>
 
         <p>
-          The "person responsible" is the natural or legal person, authority,
+          The &quot;person responsible&quot; is the natural or legal person, authority,
           institution or other body that alone or jointly with others decides on
           the purposes and means of processing personal data.
         </p>
 
         <p>
-          "Processor" means a natural or legal person, public authority, agency
+          &quot;Processor&quot; means a natural or legal person, public authority, agency
           or other body that processes personal data on behalf of the
           controller.
         </p>
@@ -222,7 +217,7 @@ export default function Cites() {
 
         <p>
           If we commission third parties to process data on the basis of a
-          so-called "order processing contract", this is done on the basis of
+          so-called &quot;order processing contract&quot;, this is done on the basis of
           Art. 28 GDPR.
         </p>
 
@@ -289,22 +284,22 @@ export default function Cites() {
 
         <h4>Cookies and the right to object to direct advertising</h4>
         <p>
-          "Cookies" are small files that are stored on users' computers.
+          &quot;Cookies&quot; are small files that are stored on users&apos; computers.
           Different information can be stored within the cookies. A cookie is
           primarily used to store information about a user (or the device on
           which the cookie is stored) during or after their visit to an online
-          offer. Temporary cookies, or "session cookies" or "transient cookies",
+          offer. Temporary cookies, or &quot;session cookies&quot; or &quot;transient cookies&quot;,
           are cookies that are deleted after a user leaves an online offer and
           closes his browser. In such a cookie, for example, the content of a
           shopping cart in an online shop or a login status can be saved.
-          "Permanent" or "persistent" refers to cookies that remain stored even
+          &quot;Permanent&quot; or &quot;persistent&quot; refers to cookies that remain stored even
           after the browser is closed. For example, the login status can be
           saved if users visit it after several days. The interests of the users
           can also be stored in such a cookie, which are used for range
-          measurement or marketing purposes. "Third-party cookies" are cookies
+          measurement or marketing purposes. &quot;Third-party cookies&quot; are cookies
           that are offered by providers other than the person responsible for
           operating the online offer (otherwise, if they are only their cookies,
-          we speak of "first-party cookies").
+          we speak of &quot;first-party cookies&quot;).
         </p>
 
         <p>
@@ -314,7 +309,7 @@ export default function Cites() {
 
         <p>
           If users do not want cookies to be stored on their computer, they are
-          asked to deactivate the corresponding option in their browser's system
+          asked to deactivate the corresponding option in their browser&apos;s system
           settings. Saved cookies can be deleted in the system settings of the
           browser. The exclusion of cookies can lead to functional restrictions
           of this online offer.
@@ -407,7 +402,7 @@ export default function Cites() {
           6 Paragraph 1 lit. The access data includes the name of the accessed
           website, file, date and time of access, amount of data transferred,
           notification of successful access, browser type and version, the
-          user's operating system, referrer URL (the previously visited page),
+          user&apos;s operating system, referrer URL (the previously visited page),
           IP address and the requesting provider .
         </p>
 
@@ -430,7 +425,7 @@ export default function Cites() {
         <p>
           We would like to point out that user data can be processed outside of
           the European Union. This can result in risks for the user because, for
-          example, the enforcement of the user's rights could be made more
+          example, the enforcement of the user&apos;s rights could be made more
           difficult. With regard to US providers who are certified under the
           Privacy Shield, we would like to point out that they undertake to
           comply with the data protection standards of the EU.
@@ -443,7 +438,7 @@ export default function Cites() {
           profiles can in turn be used, for example, to place advertisements
           inside and outside the platforms that presumably correspond to the
           interests of the user. For these purposes, cookies are usually stored
-          on the users' computers, in which the usage behavior and the interests
+          on the users&apos; computers, in which the usage behavior and the interests
           of the users are stored. Furthermore, data can also be stored in the
           usage profiles independently of the devices used by the users
           (especially if the users are members of the respective platforms and
@@ -541,7 +536,7 @@ export default function Cites() {
           online offer on the basis of our legitimate interests (ie interest in
           the analysis, optimization and economic operation of our online offer
           within the meaning of Art. 6 Para. 1 lit Integrate services such as
-          videos or fonts (hereinafter uniformly referred to as "content?").
+          videos or fonts (hereinafter uniformly referred to as &quot;content?&quot;).
         </p>
 
         <p>
@@ -551,15 +546,15 @@ export default function Cites() {
           therefore required for the display of this content. We endeavor to
           only use content whose respective providers only use the IP address to
           deliver the content. Third-party providers can also use so-called
-          pixel tags (invisible graphics, also known as "web beacons") for
-          statistical or marketing purposes. The "pixel tags" can be used to
+          pixel tags (invisible graphics, also known as &quot;web beacons&quot;) for
+          statistical or marketing purposes. The &quot;pixel tags&quot; can be used to
           evaluate information such as visitor traffic on the pages of this
           website.
         </p>
 
         <h4>Youtube</h4>
         <p>
-          We embed videos from the "YouTube" platform provided by Google LLC,
+          We embed videos from the &quot;YouTube&quot; platform provided by Google LLC,
           1600 Amphitheater Parkway, Mountain View, CA 94043, USA. Privacy
           policy: https://www.google.com/policies/privacy/ , Opt-Out: https
           ://adssettings.google.com/authenticated .
@@ -567,7 +562,7 @@ export default function Cites() {
 
         <h4>Google Fonts</h4>
         <p>
-          We integrate the fonts ("Google Fonts") provided by Google LLC, 1600
+          We integrate the fonts (&quot;Google Fonts&quot;) provided by Google LLC, 1600
           Amphitheater Parkway, Mountain View, CA 94043, USA. Privacy Policy:
           https://www.google.com/policies/privacy/ , Opt-Out:
           https://adssettings.google.com/authenticated .
@@ -576,7 +571,7 @@ export default function Cites() {
         <h4>Google ReCaptcha</h4>
         <p>
           We integrate the function for detecting bots, e.g. when making entries
-          in online forms ("ReCaptcha") from the provider Google LLC, 1600
+          in online forms (&quot;ReCaptcha&quot;) from the provider Google LLC, 1600
           Amphitheater Parkway, Mountain View, CA 94043, USA. Privacy Policy:
           https://www.google.com/policies/privacy/ , Opt-Out:
           https://adssettings.google.com/authenticated .
@@ -584,7 +579,7 @@ export default function Cites() {
 
         <h4>Google Maps</h4>
         <p>
-          We integrate the maps of the "Google Maps" service provided by Google
+          We integrate the maps of the &quot;Google Maps&quot; service provided by Google
           LLC, 1600 Amphitheater Parkway, Mountain View, CA 94043, USA. The data
           processed may include, in particular, IP addresses and location data
           of the users, but not without their consent (usually carried out as
