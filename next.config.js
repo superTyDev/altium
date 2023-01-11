@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+	images: {
+		domains: ["cdn.glitch.global"],
+	},
+	reactStrictMode: true,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
