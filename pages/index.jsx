@@ -107,7 +107,7 @@ export default function Home() {
 
 	return (
 		<>
-			<Script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></Script>
+			<Script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></Script>
 			<div className="hero">
 				<div className="heroBackground">
 					<model-viewer
