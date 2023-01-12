@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import * as React from "react";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCaretDown, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function rotateRocket(evt) {
 	var rocket = document.querySelector("#model");
@@ -250,7 +248,7 @@ export default function Home() {
 							/>
 							<div className="right">
 								<p>
-									Altium's prices rival a vacation to Europe, so naturally I took my family to space.
+									Altium&apos;s prices rival a vacation to Europe, so naturally I took my family to space.
 									It was quite the experience &dash; would recommend.
 								</p>
 								<h3>~Adam Johan</h3>
