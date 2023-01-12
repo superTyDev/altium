@@ -1,5 +1,5 @@
-import * as React from "react";
 import Image from "next/image";
+import * as React from "react";
 /* ADD IMPORTS FROM TODO ON THE NEXT LINE */
 
 /**

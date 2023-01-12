@@ -1,6 +1,6 @@
-import * as React from "react";
 import Image from "next/image";
 import Script from "next/script";
+import * as React from "react";
 
 // const [style, trigger] = useWiggle({ x: 50, rotation: 1, scale: 1.2 });
 function rotateEarth(evt) {

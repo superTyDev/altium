@@ -1,6 +1,6 @@
-import * as React from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 
 /**
  * Catch all page not found (404)

@@ -1,5 +1,5 @@
+import Link from "next/link";
 import * as React from "react";
-import Link from "next/link"
 
 /**
  * The template function defines the component that makes up the template page

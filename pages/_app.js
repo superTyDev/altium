@@ -1,7 +1,7 @@
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect } from "react";
 import "../styles/globals.css";
-import Link from "next/link";
-import Image from "next/image";
 
 function darkNav() {
 	if (window.scrollY > 15) {

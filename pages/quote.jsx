@@ -1,5 +1,5 @@
-import * as React from "react";
 import Image from "next/image";
+import * as React from "react";
 
 /**
  * The About function defines the component that makes up the About page

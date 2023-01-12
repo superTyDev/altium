@@ -1,15 +1,15 @@
+import Link from "next/link";
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from "react";
-import Link from "next/link"
-import { useRouter } from 'next/router'
 
+import { useAuthState } from "react-firebase-hooks/auth";
 import {
   auth,
   logInWithEmailAndPassword,
-  signInWithGoogle,
+  signInWithGoogle
 } from "../components/fbauth.js";
-import { useAuthState } from "react-firebase-hooks/auth";
 
-import styles from '../styles/Login.module.css'
+import styles from '../styles/Login.module.css';
 
 export default function Login() {
   const [email, setEmail] = useState("");

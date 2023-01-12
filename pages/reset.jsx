@@ -1,10 +1,10 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useRouter } from 'next/router';
-import Link from 'next/link';
 
-import { auth, sendPasswordReset } from "./../components/fbauth.js";
 import styles from "../styles/Login.module.css";
+import { auth, sendPasswordReset } from "./../components/fbauth.js";
 
 export default function Reset() {
   const [email, setEmail] = useState("");
