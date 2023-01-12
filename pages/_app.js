@@ -1,7 +1,10 @@
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
 import "../styles/globals.css";
+config.autoAddCss = false
 
 function darkNav() {
 	if (window.scrollY > 15) {
@@ -34,11 +37,12 @@ function linkDelays() {
 // Home function that is reflected across the site
 export default function App({ Component, pageProps }) {
 	useEffect(() => {
+		window.addEventListener("scroll", darkNav);
+
 		if (document.readyState === "complete") {
 			linkDelays();
 		} else {
 			window.addEventListener("load", linkDelays);
-			window.addEventListener("scroll", darkNav);
 			return () => document.removeEventListener("load", linkDelays);
 		}
 	}, []);

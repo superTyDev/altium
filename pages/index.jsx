@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import * as React from "react";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCaretDown, faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 function rotateRocket(evt) {
 	var rocket = document.querySelector("#model");
@@ -86,9 +88,22 @@ function svgAnimation() {
 	}
 }
 
+function convertToSmoothLinks() {
+	document.querySelectorAll('a[href^="/#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			this.scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
+}
+
 function onPageLoad() {
 	collapse();
 	svgAnimation();
+	convertToSmoothLinks();
 
 	setInterval(carousel, 3000);
 }
@@ -134,7 +149,7 @@ export default function Home() {
 					<div className="spacer"></div>
 				</div>
 				<Link className="heroDown" href="#everyone" id="everyone">
-					<i className="fa-solid fa-caret-down"></i>
+					&#9660;
 				</Link>
 			</div>
 			<div className="everyone">
@@ -144,7 +159,7 @@ export default function Home() {
 					<span className="nameSlide show">Teachers</span>
 					<span className="nameSlide">Performers</span>
 					<span className="nameSlide">Medics</span>
-					<span className="nameSlide">Police</span>
+					<span className="nameSlide">Families</span>
 				</h2>
 				<div className="slider">
 					<div className="slide-track">
@@ -223,6 +238,24 @@ export default function Home() {
 								<h3>~Josh Kent</h3>
 							</div>
 						</div>
+						<div className="slide">
+							<Image
+								className="left"
+								src={
+									"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cat.jpg?v=1673530109000"
+								}
+								alt="Adam Johannes Profile Photo (Cat)"
+								height={50}
+								width={50}
+							/>
+							<div className="right">
+								<p>
+									Altium's prices rival a vacation to Europe, so naturally I took my family to space.
+									It was quite the experience &dash; would recommend.
+								</p>
+								<h3>~Adam Johan</h3>
+							</div>
+						</div>
 						{/* Must be identical to above (if you add more change the number under .slider) */}
 						<div className="slide">
 							<Image
@@ -299,6 +332,24 @@ export default function Home() {
 								<h3>~Josh Kent</h3>
 							</div>
 						</div>
+						<div className="slide">
+							<Image
+								className="left"
+								src={
+									"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cat.jpg?v=1673530109000"
+								}
+								alt="Adam Johannes Profile Photo (Cat)"
+								height={50}
+								width={50}
+							/>
+							<div className="right">
+								<p>
+									Altium's prices rival a vacation to Europe, so naturally I took my family to space.
+									It was quite the experience &dash; would recommend.
+								</p>
+								<h3>~Adam Johan</h3>
+							</div>
+						</div>
 					</div>
 				</div>
 				<p>
@@ -343,8 +394,8 @@ export default function Home() {
 							</Link>
 							<Link
 								href="#steps2"
-								className="buttonNext fa-solid fa-arrow-down"
-							></Link>
+								className="buttonNext"
+							>&darr;</Link>
 						</div>
 						{/* <Image src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/astrosuit.svg?v=1670892262011" alt="Space Suit" height="400px" /> */}
 					</div>
@@ -362,8 +413,8 @@ export default function Home() {
 							</Link>
 							<Link
 								href="#steps3"
-								className="buttonNext fa-solid fa-arrow-down"
-							></Link>
+								className="buttonNext"
+							>&darr;</Link>
 						</div>
 					</div>
 				</div>
@@ -380,8 +431,8 @@ export default function Home() {
 							</Link>
 							<Link
 								href="#steps4"
-								className="buttonNext fa-solid fa-arrow-down"
-							></Link>
+								className="buttonNext"
+							>&darr;</Link>
 						</div>
 					</div>
 				</div>
@@ -389,8 +440,8 @@ export default function Home() {
 					<div className="text right">
 						<h3>Countdown</h3>
 						<p>
-							Tha it! I launch day and yoe ready. Arrive 2 hours before launch
-							time and before you know it yol be in space.
+							That&apos;s it! It&apos;s launch day and you&apos;re ready. Arrive 2 hours before launch
+							time and before you know it you&apos;ll be in space.
 						</p>
 					</div>
 				</div>
@@ -402,7 +453,7 @@ export default function Home() {
 						<div className="innerCard">
 							<h3>Stratosphere</h3>
 							<p>
-								Take a day trip into space. Yol see amazing views and experience
+								Take a day trip into space. You&apos;ll see amazing views and experience
 								zero g without the hassle of being an astronaut.
 							</p>
 						</div>
