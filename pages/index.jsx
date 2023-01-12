@@ -412,6 +412,7 @@ export default function Home() {
 								"https://cdn.mos.cms.futurecdn.net/yRQNRdNU5fiJZ7AQBRpMkk-970-80.jpg.webp"
 							}
 							width={400}
+              height={120}
 							alt="Earth's Stratosphere"
 						/>
 					</div>
@@ -429,6 +430,7 @@ export default function Home() {
 								"https://www.freepnglogos.com/uploads/moon-png/moon-labyr-nth-deviantart-0.png"
 							}
 							width={400}
+              height={120}
 							alt="Full Moon"
 						/>
 					</div>
@@ -445,6 +447,7 @@ export default function Home() {
 								"https://www.nasa.gov/sites/default/files/thumbnails/image/final_configuration_of_iss.jpg"
 							}
 							width={400}
+              height={120}
 							alt="International Space Station in Front of the Earth"
 						/>
 					</div>
