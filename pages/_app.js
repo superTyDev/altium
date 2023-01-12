@@ -52,7 +52,7 @@ export default function App({ Component, pageProps }) {
 							height={24}
 							width={24}
 							src={
-								"https://cdn.glitch.global/2ed4b08e-aa2f-4ed2-9f56-1225d5edadb6/touch-icon.png?v=1661874307713"
+								"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/touch-icon.png?v=1673518459398"
 							}
 							alt="Eagle Icon"
 						/>

@@ -33,9 +33,9 @@ export default function Map() {
 					<div className="heroBackground">
 						<model-viewer
 							id="model"
-							src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/Earth_1_12756.glb?v=1664381511722"
-							environment-image="https://cdn.glitch.global/f08abb14-42ed-46f6-bf3d-e8c00a91d384/cubemap.jpg?v=1663689736500"
-							skybox-image="https://cdn.glitch.global/f08abb14-42ed-46f6-bf3d-e8c00a91d384/cubemap.jpg?v=1663689736500"
+							src="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/Earth_1_12756.glb?v=1673518445347"
+							environment-image="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cubemap.webp?v=1673518418783"
+							skybox-image="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cubemap.webp?v=1673518418783"
 							exposure="2"
 						>
 							<div className="progress-bar hide" slot="progress-bar">
@@ -56,9 +56,10 @@ export default function Map() {
 						<div className="spacer"></div>
 						<Image
 							src={
-								"https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/istockphoto-1314510269-612x612.jpg?v=1664383228152"
+								"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/istockphoto-1314510269-612x612.jpg?v=1673518439305"
 							}
 							width={400}
+							heigh={400}
 							alt="Full Moon Photo"
 						/>
 						<div className="spacer"></div>

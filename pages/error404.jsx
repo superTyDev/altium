@@ -18,9 +18,10 @@ export default function Error404() {
 				</p>
 				<Image
 					src={
-						"https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/saturnv.webp?v=1664056676127"
+						"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/poster.webp?v=1673518453030"
 					}
 					width={500}
+					height={500}
 					style={{ margin: "auto", width: "50%" }}
 					alt="Saturn V Rocket Perspective Rendering"
 				/>

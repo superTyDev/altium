@@ -1,8 +1,10 @@
 /* Generic styles */
 html {
   scroll-behavior: smooth;
-  --accent: #c84630; /* a nice orange accent */
+  --accent: #c84630;
+  /* a nice orange accent */
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -10,9 +12,11 @@ body {
   background-color: #003464;
   font-family: "Trebuchet MS", sans-serif;
 }
+
 .content a {
   color: white;
 }
+
 .buttonCont {
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +25,7 @@ body {
   padding: 40px 20px;
   gap: 40px;
 }
+
 .button {
   display: block;
   padding: 0.35em 1.2em;
@@ -36,6 +41,7 @@ body {
   transition: all 0.2s;
   box-shadow: 5px 5px 5px #0000001a, inset 5px 5px 5px #0000001a;
 }
+
 .buttonNext {
   display: block;
   /*   padding: 0.35em 1.2em; */
@@ -49,26 +55,32 @@ body {
   transition: all 0.2s;
   text-shadow: 0 0 8px #000000;
 }
+
 .button:hover {
   color: black;
   border-color: #ffffff;
   background-color: #ffffff;
   box-shadow: 2px 2px 2px #0000001a;
 }
+
 .buttonNext:hover {
   text-shadow: 0 0 2px #000000;
 }
+
 a.button,
 a.buttonNext {
   color: var(--accent);
 }
+
 .spacer {
   content: " ";
   flex: 1;
 }
+
 .spacerStatic {
   height: 20px;
 }
+
 h4 {
   text-transform: capitalize;
 }
@@ -87,34 +99,42 @@ nav {
   box-shadow: 5px 5px 5px #0000001a;
   z-index: 9;
 }
+
 nav:hover {
   background-color: #ffffffbb;
 }
+
 nav.scrolled {
   background-color: #bbc9d6;
 }
+
 nav h2 {
   padding-left: 20px;
   font-size: inherit;
   display: inline;
   color: black;
 }
+
 nav h2 img {
   transform: translateY(2px);
   padding-right: 5px;
 }
+
 nav a {
   padding: 0 20px;
   float: right;
   text-decoration: none;
   color: black;
 }
+
 nav a:hover {
   background-color: #eeeeee;
 }
+
 nav #logo {
   float: left;
 }
+
 .navSpacer {
   height: 70px;
   width: 100%;
@@ -133,17 +153,20 @@ nav #logo {
   background-color: transparent;
   transition: background-color 0.5s;
 }
+
 .sideNav.expand {
   background-color: #00000099;
   pointer-events: inherit;
 }
+
 .sideNavInner,
-.sideNavInner > * {
+.sideNavInner>* {
   display: flex;
   width: 0;
   box-sizing: border-box;
   transition: width 2s, background-color 2.5s;
 }
+
 .sideNavInner {
   position: fixed;
   top: 0;
@@ -156,15 +179,18 @@ nav #logo {
 
   max-width: 500px;
 }
-.sideNavInner > * {
+
+.sideNavInner>* {
   background-color: #003464;
   box-shadow: 5px 5px 5px #00000044;
   justify-content: space-between;
 }
+
 .sideNav.expand .sideNavInner,
-.sideNav.expand .sideNavInner > * {
+.sideNav.expand .sideNavInner>* {
   width: 100%;
 }
+
 .sideNavInner hr {
   border: 1px solid white;
   border-left: none;
@@ -173,6 +199,7 @@ nav #logo {
   padding: 1px;
   width: 100%;
 }
+
 .sideNavInner h2,
 .sideNavInner a {
   padding: 20px 25px;
@@ -180,6 +207,7 @@ nav #logo {
   display: flex;
   justify-content: space-between;
 }
+
 .sideNavInner h2 {
   margin-block-start: 0;
   margin-block-end: 0;
@@ -187,26 +215,32 @@ nav #logo {
   padding-block-start: 1.3em;
   padding-block-end: 0.83em;
 }
+
 .sideNavInner h2 span {
   padding: 0 10px;
   border-radius: 10px;
 }
+
 .sideNavInner a {
   text-decoration: none;
   color: white;
   font-size: 20px;
 }
+
 .sideNavInner h2 span:hover,
 .sideNavInner a:hover {
   background-color: #557898;
 }
+
 .sideNavInner a i {
   vertical-align: middle;
   line-height: 24px;
 }
+
 .sideNavInner .spacer {
   background-color: transparent;
 }
+
 .sideNav.expand .spacer {
   background-color: #003464;
 }
@@ -215,6 +249,7 @@ nav #logo {
 .content {
   min-height: calc(100vh - 200px);
 }
+
 .page {
   padding: 20px 10vw;
 }
@@ -226,6 +261,7 @@ nav #logo {
   padding: 0 20vw;
   justify-content: flex-end;
 }
+
 .heroBackground {
   width: 150%;
   height: 100vh;
@@ -235,14 +271,16 @@ nav #logo {
   z-index: -1;
   transition: all 0.5s;
 
-  /*   background: url("https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/cubemap.min.jpg?v=1664065155124"); */
+  /*   background: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cubemap.webp?v=1673518418783"); */
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 model-viewer {
   width: 100%;
   height: 100%;
 }
+
 .heroRight {
   z-index: 1;
   height: 100%;
@@ -253,16 +291,20 @@ model-viewer {
   text-align: center;
   gap: 20px;
 }
-.heroRight > * {
+
+.heroRight>* {
   text-shadow: 2px 2px 10px black;
 }
+
 .heroRight h1 {
   margin-block-end: 0;
   font-size: 80px;
 }
+
 .heroRight p {
   font-size: 30px;
 }
+
 .heroDown {
   position: absolute;
   bottom: 0;
@@ -278,6 +320,7 @@ model-viewer {
   opacity: 0.5;
   transition: all 0.5s;
 }
+
 .heroDown:hover {
   opacity: 1;
 }
@@ -286,16 +329,19 @@ model-viewer {
 .everyone {
   padding: 40px 10vw;
 }
-.everyone > h2 {
+
+.everyone>h2 {
   font-size: min(5vw, 60px);
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
-.everyone > p {
+
+.everyone>p {
   max-width: 500px;
   text-align: center;
   margin: auto;
 }
+
 .nameSlide {
   display: inline-block;
   opacity: 0;
@@ -306,6 +352,7 @@ model-viewer {
   vertical-align: bottom;
   color: var(--accent);
 }
+
 .nameSlide.show {
   opacity: 1;
   width: fit-content;
@@ -316,10 +363,9 @@ model-viewer {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(
-      calc(calc(var(--commentWidth) * var(--numComments)) * -1)
-    );
+    transform: translateX(calc(calc(var(--commentWidth) * var(--numComments)) * -1));
   }
 }
 
@@ -327,12 +373,12 @@ model-viewer {
   0% {
     transform: translateX(0);
   }
+
   100% {
-    transform: translateX(
-      calc(calc(var(--commentWidth) * var(--numComments)) * -1)
-    );
+    transform: translateX(calc(calc(var(--commentWidth) * var(--numComments)) * -1));
   }
 }
+
 .slider {
   --commentWidth: 355px;
   --numComments: 4;
@@ -345,13 +391,12 @@ model-viewer {
   width: 100%;
   max-width: 1400px;
 }
+
 .slider::before,
 .slider::after {
-  background: linear-gradient(
-    to right,
-    #003464 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right,
+      #003464 0%,
+      rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 100%;
   position: absolute;
@@ -359,15 +404,18 @@ model-viewer {
   z-index: 2;
   pointer-events: none;
 }
+
 .slider::after {
   right: 0;
   top: 0;
   transform: rotateZ(180deg);
 }
+
 .slider::before {
   left: 0;
   top: 0;
 }
+
 .slider .slide-track {
   -webkit-animation: scroll 22s linear infinite;
   animation: scroll 22s linear infinite;
@@ -376,6 +424,7 @@ model-viewer {
   height: 100%;
   width: calc(calc(calc(var(--commentWidth) * var(--numComments)) * 2) - 20px);
 }
+
 .slider .slide {
   height: 100%;
   width: var(--commentWidth);
@@ -388,17 +437,21 @@ model-viewer {
   transition: all 0.5s;
   box-sizing: border-box;
 }
+
 .slider .slide .left {
   height: 50px;
   border-radius: 50%;
 }
+
 .slider .slide .right {
   flex: 1;
   padding: 5px;
 }
+
 .slider .slide:hover {
   background-color: #ffffff55;
 }
+
 .slider:hover .slide-track,
 .slide-track.pause {
   animation-play-state: paused;
@@ -406,7 +459,7 @@ model-viewer {
 
 /* Steps Animation */
 .steps {
-  background-image: url("https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/planetSky.jpg?v=1670698690808");
+  background-image: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/planetSky.jpg?v=1673518473586");
 
   min-height: 500px;
 
@@ -418,12 +471,14 @@ model-viewer {
   font-size: 125%;
   position: relative;
 }
-.steps > div {
+
+.steps>div {
   height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .steps div:nth-child(2n) {
   background-color: #00000022;
   background: linear-gradient(to right, transparent, #00000033);
@@ -467,24 +522,29 @@ model-viewer {
   padding: 40px 10vw;
   min-height: 80vh;
 }
+
 .packing ul {
   padding-left: 0;
 }
+
 .packing li {
   padding: 10px;
   transition: all 0.5s;
   background-color: #ffffff44;
   list-style: none;
 }
+
 .packing li:hover {
   background-color: #ffffff66;
 }
+
 .packing .cardCont {
   width: 100%;
   gap: 20px;
   display: flex;
   flex-wrap: wrap;
 }
+
 .packing .card {
   min-width: 200px;
   background-color: #ffffff44;
@@ -497,22 +557,27 @@ model-viewer {
   justify-content: space-between;
   flex: 1;
 }
+
 .packing .innerCard {
   padding: 10px 20px;
 }
+
 .packing .card:hover {
   background-color: #ffffff66;
   border-radius: 10px;
 }
+
 .packing .card img {
   width: 100%;
   height: 100px;
   margin-bottom: -5px;
   object-fit: cover;
 }
+
 .packing .button {
   min-width: 150px;
 }
+
 .packing .collapsible {
   background-color: #eee;
   color: #444;
@@ -524,16 +589,19 @@ model-viewer {
   font-size: 15px;
   padding: 10px 15px;
 }
+
 .packing .active,
 .collapsible:hover {
   background-color: #ccc;
 }
+
 .packing .collapCont {
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 .packing .collapsible:after {
   content: "\f0d7";
   font-size: 13px;
@@ -549,7 +617,7 @@ model-viewer {
 /* launch dates, third section */
 .launch {
   position: relative;
-  background: url("https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/launchpad.jpg?v=1663940876525");
+  background: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/launchpad.jpg?v=1673518444150");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -559,10 +627,12 @@ model-viewer {
   color: #222222cc;
   min-height: 50vh;
 }
+
 .launch .textCont {
   position: relative;
   min-height: 32vw;
 }
+
 .launch .text {
   background-color: #000000ee;
   color: white;
@@ -580,11 +650,13 @@ model-viewer {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
+
 .launch .buttonCont a {
   flex: 1;
   color: #222222cc;
   border-color: #222222cc;
 }
+
 .launch .buttonCont a:hover {
   border-color: white;
 }
@@ -599,12 +671,14 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
 footer .title {
   margin-top: 10px;
   padding: 10px 20px;
   font-size: 20px;
   color: black;
 }
+
 footer .links {
   padding: 5px 15px;
   flex: 1;
@@ -612,6 +686,7 @@ footer .links {
   flex-wrap: wrap;
   align-items: flex-start;
 }
+
 footer .links a {
   padding: 10px 15px;
   display: block;
@@ -619,9 +694,11 @@ footer .links a {
   text-decoration: none;
   font-size: 18px;
 }
+
 footer .links a:hover {
   background-color: white;
 }
+
 footer .copyright {
   padding: 10px 20px;
   color: black;
@@ -632,12 +709,15 @@ footer .copyright {
   .hero {
     justify-content: center;
   }
+
   .heroRight h1 {
     font-size: 60px;
   }
+
   .heroRight p {
     font-size: 30px;
   }
+
   .steps .text {
     width: 70%;
     padding: 15%;
