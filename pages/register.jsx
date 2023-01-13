@@ -69,7 +69,7 @@ export default function Register() {
             Register
           </button>
           <button
-            className={[styles.login__btn, styles.login__google]}
+            className={[styles.login__btn, styles.login__google].join(" ")}
             onClick={signInWithGoogle}
           >
             Register with Google

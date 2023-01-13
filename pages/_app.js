@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -46,6 +47,10 @@ export default function App({ Component, pageProps }) {
 
 	return (
 		<>
+			<Head>
+				<title>Altium Aeronautics</title>
+				<meta property="og:title" content="Altium Aeronautics" key="title" />
+			</Head>
 			<nav>
 				<Link href="/" id="logo">
 					<h2>

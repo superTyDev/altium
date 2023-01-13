@@ -3,72 +3,121 @@ import * as React from "react";
 
 import styles from "../styles/About.module.css"
 
+let slideIndex = 1;
+
+// Next/previous controls
+function plusSlides(n) {
+	showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+	showSlides(slideIndex = n);
+}
+
+function showSlides(n = 1) {
+	let i;
+	let slides = document.getElementsByClassName(styles.mySlides);
+	let dots = document.getElementsByClassName(styles.demo);
+	let captionText = document.getElementById(styles.caption);
+
+	console.log(slideIndex)
+	if (n > slides.length) { slideIndex = 1 }
+	if (n < 1) { slideIndex = slides.length }
+	console.log(slideIndex)
+
+	if (slides.length) {
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].classList.remove("active");
+		}
+
+		slides[slideIndex - 1].style.display = "block";
+		dots[slideIndex - 1].classList.add("active");
+		captionText.innerHTML = dots[slideIndex - 1].alt;
+	}
+}
+
+function onPageLoad() {
+	showSlides(slideIndex);
+}
+
 export default function About() {
+	if (typeof window !== "undefined") {
+		if (document.readyState === "complete") {
+			onPageLoad();
+		} else {
+			window.addEventListener("load", onPageLoad);
+		}
+	}
+
 	return (
 		<>
 			<div className="navSpacer"></div>
 			<div className="page">
 				<h1 className="title">About</h1>
-				<div class="container">
+				<div className={styles.container}>
 
-					<div class="mySlides">
-						<div class="numbertext">1 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>1 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<div class="mySlides">
-						<div class="numbertext">2 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>2 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<div class="mySlides">
-						<div class="numbertext">3 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>3 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<div class="mySlides">
-						<div class="numbertext">4 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>4 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<div class="mySlides">
-						<div class="numbertext">5 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>5 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<div class="mySlides">
-						<div class="numbertext">6 / 6</div>
-						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} />
+					<div className={styles.mySlides}>
+						<div className={styles.numbertext}>6 / 6</div>
+						<Image src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={400} height={400} alt="Final Configuration of ISS" />
 					</div>
 
-					<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					<a className={styles.prev} onClick={() => plusSlides(-1)}>&#10094;</a>
+					<a className={styles.next} onClick={() => plusSlides(1)}>&#10095;</a>
 
-					<div class="caption-container">
-						<p id="caption"></p>
+					<div className={[styles.caption, styles.container].join(" ")}>
+						<p id={styles.caption}></p>
 					</div>
 
-					<div class="row">
-						<div class="column">
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(1)" alt="The Woods" />
+					<div className={styles.row}>
+						<div className={styles.column}>
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(1)} alt="The Woods" />
 						</div>
-						<div class="column">
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(2)" alt="Cinque Terre" />
+						<div className={styles.column}>
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(2)} alt="Cinque Terre" />
 						</div>
-						<div class="column">
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(3)" alt="Mountains and fjords" />
+						<div className={styles.column}>
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(3)} alt="Mountains and fjords" />
 						</div>
-						<div class="column">
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(4)" alt="Northern Lights" />
+						<div className={styles.column}>
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(4)} alt="Northern Lights" />
 						</div>
-						<div class="column">
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(5)" alt="Nature and sunrise" />
+						<div className={styles.column}>
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(5)} alt="Nature and sunrise" />
 						</div>
-						<div class="column">a
-							<Image class="demo cursor" src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onclick="currentSlide(6)" alt="Snowy Mountains" />
+						<div className={styles.column}>a
+							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(6)} alt="Snowy Mountains" />
 						</div>
 					</div>
-				</div>
+				</div >
 				<div className="card">
 					<div className="left">
 						<Image
@@ -82,7 +131,7 @@ export default function About() {
 					</div>
 					<div className="right"></div>
 				</div>
-			</div>
+			</div >
 		</>
 	);
 }

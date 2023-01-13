@@ -58,7 +58,7 @@ export default function Login() {
             Login
           </button>
           <button
-            className={[styles.login__btn, styles.login__google]}
+            className={[styles.login__btn, styles.login__google].join(" ")}
             onClick={signInWithGoogle}
           >
             Login with Google

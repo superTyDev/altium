@@ -342,7 +342,7 @@ export default function Home() {
 							/>
 							<div className="right">
 								<p>
-									Altium's prices rival a vacation to Europe, so naturally I took my family to space.
+									Altium&apos;s prices rival a vacation to Europe, so naturally I took my family to space.
 									It was quite the experience &dash; would recommend.
 								</p>
 								<h3>~Adam Johan</h3>
@@ -441,6 +441,15 @@ export default function Home() {
 							That&apos;s it! It&apos;s launch day and you&apos;re ready. Arrive 2 hours before launch
 							time and before you know it you&apos;ll be in space.
 						</p>
+						<div className="buttonCont">
+							<Link href="/quote" className="button">
+								View Tickets
+							</Link>
+							<Link
+								href="/quote"
+								className="buttonNext"
+							>&rarr;</Link>
+						</div>
 					</div>
 				</div>
 			</div>
