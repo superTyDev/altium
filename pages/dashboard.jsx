@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import React, { useEffect } from "react";
 
-import { auth } from "./../components/fbauth.js";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./../components/fbauth.js";
 
 import "../styles/Dashboard.module.css";
 

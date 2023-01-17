@@ -1,6 +1,6 @@
+import { useRouter } from 'next/router';
 import React, { useEffect } from "react";
-import { auth, logout } from "../components/fbauth.js";
-import { useRouter } from 'next/router'
+import { logout } from "../components/fbauth.js";
 
 export default function Logout(req, res) {
 	logout();

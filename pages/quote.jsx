@@ -1,5 +1,5 @@
-import * as React from "react";
 import Image from "next/image";
+import * as React from "react";
 
 /**
  * The About function defines the component that makes up the About page
@@ -16,10 +16,11 @@ export default function About() {
 					<div className="left">
 						<Image
 							src={
-								"https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/saturnv-crosssection.png?v=1664497145316"
+								"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/saturnv-crosssection.png?v=1673518459567"
 							}
 							alt="Saturn V Cross Section"
 							width={250}
+							height={250}
 						/>
 					</div>
 					<div className="right"></div>

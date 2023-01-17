@@ -12,7 +12,7 @@ export default function Feedback() {
     <>
       <div className="navSpacer"></div>
       <div className="page">
-    <h1>feedback</h1>
+        <h1>feedback</h1>
       </div>
     </>
   );

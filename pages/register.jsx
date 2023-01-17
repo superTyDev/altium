@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import React, { useEffect, useState } from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import {
   auth,
   registerWithEmailAndPassword,
-  signInWithGoogle,
+  signInWithGoogle
 } from "./../components/fbauth.js";
 
 import styles from "../styles/Login.module.css";
@@ -69,7 +69,7 @@ export default function Register() {
             Register
           </button>
           <button
-            className={[styles.login__btn, styles.login__google]}
+            className={[styles.login__btn, styles.login__google].join(" ")}
             onClick={signInWithGoogle}
           >
             Register with Google
