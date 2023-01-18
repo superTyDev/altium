@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Altium Aeronautics!
 
-## Getting Started
+This project is built on Next.js, a modern web framework for the 2023 Florida TSA competition.
 
-First, run the development server:
+## Engineering Notebook
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+See/edit the [engineering notebook here](https://docs.google.com/document/d/11LtJvW9aZJ2__on8zBuYxzUkE73G3TwpArdAp0vSD_A/edit?usp=sharing).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+_For Team Members:_ We are using the same template we use in engineering class. Any time you make a big visual change, enter your changes in the build day log. Please also take a screenshot of the page you changed and enter it in your build day entry.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Prompt
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+**Topic:** Space Tourism: a company that will make you an astronaut
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create a fictitious company and design an appropriate website. The website should provide information starting with promotion, basic information, cost, planning, training, vehicles, safety, launch, and recovery.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## For the Team
 
-## Learn More
+### Editing
 
-To learn more about Next.js, take a look at the following resources:
+If you're on glitch, it is used a middle ground because github is blocked :(
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Go to Tools > Import/Export > Import from Github and choose the repository superTyDev/altium. When you're done deploy (or the world will get jumbled).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The production deployment is at [altium.vercel.app](https://altium.vercel.app). To deploy go to Tools > Import/Export > Export to Github. If you have troubles tell Tyson.
 
-## Deploy on Vercel
+### Making Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can add pages in the pages directory by
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Copying the template.jsx file
+2. Replace every instance of template with the page title (including the file name)
+3. Enter the page's **body** HTML content between the `return ()` parentheses
+4. Use next components like `Head`, `Link`, `Script`, `Image` instead of normal html tags
+
+   - You'll have to import these components at the top of the file (ex. `import Head from 'next/Head';`)
+
+5. To add a stylesheet create the file Name.module.css in the styles folder. Then use `import styles from '../styles/Name.module.css';`
+
+At this point you're probably wondering _why_. React allows static sites which are always on and have a nice preload functionality. Next.js makes this really fast.

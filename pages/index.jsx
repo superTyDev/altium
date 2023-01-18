@@ -249,7 +249,7 @@ export default function Home() {
 							<div className="right">
 								<p>
 									Altium&apos;s prices rival a vacation to Europe, so naturally I took my family to space.
-									It was quite the experience &dash; would recommend.
+									It was quite the experience - would recommend.
 								</p>
 								<h3>~Adam Johan</h3>
 							</div>
@@ -343,7 +343,7 @@ export default function Home() {
 							<div className="right">
 								<p>
 									Altium&apos;s prices rival a vacation to Europe, so naturally I took my family to space.
-									It was quite the experience &dash; would recommend.
+									It was quite the experience - would recommend.
 								</p>
 								<h3>~Adam Johan</h3>
 							</div>
