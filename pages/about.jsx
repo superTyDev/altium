@@ -19,19 +19,17 @@ function showSlides(n = 1) {
 	let i;
 	let slides = document.getElementsByClassName(styles.mySlides);
 	let dots = document.getElementsByClassName(styles.demo);
-	let captionText = document.getElementById(styles.caption);
+	let captionText = document.getElementById("caption");
 
-	console.log(slideIndex)
 	if (n > slides.length) { slideIndex = 1 }
 	if (n < 1) { slideIndex = slides.length }
-	console.log(slideIndex)
 
 	if (slides.length) {
 		for (i = 0; i < slides.length; i++) {
 			slides[i].style.display = "none";
 		}
 		for (i = 0; i < dots.length; i++) {
-			dots[i].className = dots[i].classList.remove("active");
+			dots[i].classList.remove("active");
 		}
 
 		slides[slideIndex - 1].style.display = "block";
@@ -56,7 +54,7 @@ export default function About() {
 	return (
 		<>
 			<div className="navSpacer"></div>
-			<div className="page">
+			<div>
 				<h1 className="title">About</h1>
 				<div className={styles.container}>
 
@@ -94,7 +92,7 @@ export default function About() {
 					<a className={styles.next} onClick={() => plusSlides(1)}>&#10095;</a>
 
 					<div className={[styles.caption, styles.container].join(" ")}>
-						<p id={styles.caption}></p>
+						<p id="caption"></p>
 					</div>
 
 					<div className={styles.row}>
@@ -113,7 +111,7 @@ export default function About() {
 						<div className={styles.column}>
 							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(5)} alt="Nature and sunrise" />
 						</div>
-						<div className={styles.column}>a
+						<div className={styles.column}>
 							<Image className={[styles.demo, styles.cursor].join(" ")} src={"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930"} width={100} height={100} onClick={() => currentSlide(6)} alt="Snowy Mountains" />
 						</div>
 					</div>
