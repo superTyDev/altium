@@ -1,0 +1,13 @@
+.section {
+    max-height: 100vh;
+
+    width: 100%;
+}
+
+.section:nth-child(even) {
+    background-color: #00000055;
+}
+
+.sectionImage {
+    max-width: 60vw;
+}
