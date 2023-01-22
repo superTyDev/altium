@@ -1,13 +1,43 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    margin: 80px 0;
+    font-size: 50px;
+}
+
+.hero .backgroundImg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
 .section {
     max-height: 100vh;
-
+    display: flex;
     width: 100%;
+    background-color: var(--background);
 }
 
 .section:nth-child(even) {
-    background-color: #00000055;
+    background-color: #002343;
+    flex-direction: row-reverse;
 }
 
 .sectionImage {
     max-width: 60vw;
+}
+
+.altCont {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
 }

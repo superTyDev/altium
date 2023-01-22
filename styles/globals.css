@@ -2,6 +2,7 @@
 html {
   scroll-behavior: smooth;
   --accent: #c84630;
+  --background: #003464;
   /* a nice orange accent */
 }
 
@@ -9,7 +10,7 @@ body {
   padding: 0;
   margin: 0;
   color: #eee;
-  background-color: #003464;
+  background-color: var(--background);
   font-family: "Trebuchet MS", sans-serif;
 }
 
@@ -205,7 +206,7 @@ nav #logo {
 }
 
 .sideNavInner>* {
-  background-color: #003464;
+  background-color: var(--background);
   box-shadow: 5px 5px 5px #00000044;
   justify-content: space-between;
 }
@@ -266,7 +267,7 @@ nav #logo {
 }
 
 .sideNav.expand .spacer {
-  background-color: #003464;
+  background-color: var(--background);
 }
 
 /* main page */
@@ -419,7 +420,7 @@ model-viewer {
 .Index_slider::before,
 .Index_slider::after {
   background: linear-gradient(to right,
-      #003464 0%,
+      var(--background) 0%,
       rgba(255, 255, 255, 0) 100%);
   content: "";
   height: 100%;
