@@ -13,24 +13,65 @@
 
 .hero .backgroundImg {
     position: fixed;
+    width: 100%;
     inset: 0;
     z-index: -1;
 }
 
+.backgroundSection {
+    position: relative;
+    background-color: var(--background);
+    background: linear-gradient(to bottom, var(--background), #00519c);
+}
+
+.backgroundSection canvas {
+    position: absolute;
+    inset: 0;
+    display: block;
+    /* background-color: aliceblue; */
+}
+
 .section {
     max-height: 100vh;
+    position: relative;
     display: flex;
     width: 100%;
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    /* background: linear-gradient(to bottom, var(--background), #00519c); */
 }
 
 .section:nth-child(even) {
-    background-color: #002343;
+    /* background-color: #002343; */
+    /* background: linear-gradient(330deg, var(--background), #002343); */
+    /* background: linear-gradient(to top, var(--background), #00519c); */
     flex-direction: row-reverse;
 }
 
+/* .vertSection {
+    flex-direction: column !important;
+}
+
+.section .backgroundSvg {
+    z-index: 0;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section:nth-child(even) .backgroundSvg {
+    transform: scaleX(-1);
+} */
+
+/* .vertSection .sectionImage {
+    max-width: 100vw;
+} */
+
 .sectionImage {
-    max-width: 60vw;
+    max-height: min(60vw, 100vh);
+    max-width: min(60vw, 100vh);
 }
 
 .altCont {
@@ -39,5 +80,20 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 20px;
+    padding: 20px max(20px, 10vw);
+    font-size: 115%;
+    line-height: 135%;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .section {
+        flex-direction: column !important;
+        max-height: unset;
+    }
+
+    .sectionImage {
+        max-height: 100vh;
+        max-width: 100vw;
+    }
 }

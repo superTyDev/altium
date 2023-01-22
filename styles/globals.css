@@ -189,7 +189,7 @@ nav #logo {
   display: flex;
   width: 0;
   box-sizing: border-box;
-  transition: width 2s, background-color 2.5s;
+  transition: width 1.5s, background-color 2.5s;
 }
 
 .sideNavInner {

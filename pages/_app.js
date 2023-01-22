@@ -139,7 +139,7 @@ export default function App({ Component, pageProps }) {
 					<Link href="/sitemap">Sitemap</Link>
 				</div>
 				<div className="copyright">
-					© Tyson McLaws, Connor Altvater 2022. No Rights Reserved.
+					© Tyson McLaws, Connor Altvater 2033. No Rights Reserved.
 				</div>
 				<div></div>
 			</footer>
