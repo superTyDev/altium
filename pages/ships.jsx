@@ -103,7 +103,9 @@ export default function Ships() {
                   alt="image3"
                   loading="lazy"
                 />
-                <p className="legend">Gibraltar's Space Launch Vehicle (SLV)</p>
+                <p className="legend">
+                  Gibraltar&Aapos;s Space Launch Vehicle (SLV)
+                </p>
               </div>
             </Carousel>
             <div className={styles.altCont}>
