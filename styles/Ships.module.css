@@ -18,32 +18,25 @@
     z-index: -1;
 }
 
-.backgroundSection {
+/* .backgroundSection {
     position: relative;
     background-color: var(--background);
     background: linear-gradient(to bottom, var(--background), #00519c);
-}
-
-.backgroundSection canvas {
-    position: absolute;
-    inset: 0;
-    display: block;
-    /* background-color: aliceblue; */
-}
+} */
 
 .section {
     max-height: 100vh;
     position: relative;
     display: flex;
     width: 100%;
-    /* background-color: var(--background); */
-    /* background: linear-gradient(to bottom, var(--background), #00519c); */
+    background-color: var(--background);
+    background: linear-gradient(to bottom, var(--background), #0967c0);
 }
 
 .section:nth-child(even) {
     /* background-color: #002343; */
     /* background: linear-gradient(330deg, var(--background), #002343); */
-    /* background: linear-gradient(to top, var(--background), #00519c); */
+    background: linear-gradient(to top, var(--background), #0967c0);
     flex-direction: row-reverse;
 }
 
