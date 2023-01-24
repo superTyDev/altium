@@ -1,21 +1,22 @@
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
-    margin: 80px 0;
-    font-size: 50px;
+  margin: 80px 0;
+  font-size: 50px;
+  color: white;
 }
 
 .hero .backgroundImg {
-    position: fixed;
-    width: 100%;
-    inset: 0;
-    z-index: -1;
+  position: fixed;
+  width: 100%;
+  inset: 0;
+  z-index: -1;
 }
 
 /* .backgroundSection {
@@ -25,19 +26,19 @@
 } */
 
 .section {
-    max-height: 100vh;
-    position: relative;
-    display: flex;
-    width: 100%;
-    background-color: var(--background);
-    background: linear-gradient(to bottom, var(--background), #0967c0);
+  max-height: 100vh;
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: var(--background);
+  background: linear-gradient(to bottom, var(--background), #0967c0);
 }
 
 .section:nth-child(even) {
-    /* background-color: #002343; */
-    /* background: linear-gradient(330deg, var(--background), #002343); */
-    background: linear-gradient(to top, var(--background), #0967c0);
-    flex-direction: row-reverse;
+  /* background-color: #002343; */
+  /* background: linear-gradient(330deg, var(--background), #002343); */
+  background: linear-gradient(to top, var(--background), #0967c0);
+  flex-direction: row-reverse;
 }
 
 /* .vertSection {
@@ -63,30 +64,30 @@
 } */
 
 .sectionImage {
-    max-height: min(60vw, 100vh);
-    max-width: min(60vw, 100vh);
+  max-height: min(60vw, 100vh);
+  max-width: min(60vw, 100vh);
 }
 
 .altCont {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px max(20px, 10vw);
-    font-size: 115%;
-    line-height: 135%;
-    z-index: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px max(20px, 10vw);
+  font-size: 115%;
+  line-height: 135%;
+  z-index: 1;
 }
 
 @media only screen and (max-width: 600px) {
-    .section {
-        flex-direction: column !important;
-        max-height: unset;
-    }
+  .section {
+    flex-direction: column !important;
+    max-height: unset;
+  }
 
-    .sectionImage {
-        max-height: 100vh;
-        max-width: 100vw;
-    }
+  .sectionImage {
+    max-height: 100vh;
+    max-width: 100vw;
+  }
 }
