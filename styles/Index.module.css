@@ -437,3 +437,23 @@
 .launch .buttonCont a:hover {
   border-color: white;
 }
+
+/* Styles for mobile */
+@media only screen and (max-width: 600px) {
+  .hero {
+    justify-content: center;
+  }
+
+  .heroRight h1 {
+    font-size: 60px;
+  }
+
+  .heroRight p {
+    font-size: 30px;
+  }
+
+  .steps .text {
+    width: 70%;
+    padding: 15%;
+  }
+}

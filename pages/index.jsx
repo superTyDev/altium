@@ -132,7 +132,7 @@ export default function Home() {
             id="model"
             src="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/saturnv?v=1673520475101"
             disable-zoom
-            poster="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/poster.webp?v=1674584593352"
+            style={{ backgroundColor: "#003464" }}
             skybox-image="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cubemap.webp?v=1673518418783"
             exposure="2"
           >

@@ -236,7 +236,7 @@ nav #logo {
 }
 
 .sideNavInner hr {
-  border: 1px solid white;
+  border: 1px solid var(--text);
   border-left: none;
   border-right: none;
 
@@ -310,6 +310,7 @@ footer {
   box-sizing: border-box;
   background-color: var(--background);
 
+  box-shadow: 0 -4px 5px #0000001a;
   display: flex;
   flex-direction: column;
 }
@@ -407,9 +408,9 @@ footer input:focus + .slider {
 }
 
 footer input:checked + .slider:before {
-  -webkit-transform: translateX(30px);
-  -ms-transform: translateX(30px);
-  transform: translateX(30px);
+  -webkit-transform: translateX(30px) rotate(180deg);
+  -ms-transform: translateX(30px) rotate(180deg);
+  transform: translateX(30px) rotate(180deg);
   background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -425,24 +426,7 @@ footer .slider.round:before {
 
 /* Styles for mobile */
 @media only screen and (max-width: 600px) {
-  .hero {
-    justify-content: center;
-  }
-
-  .heroRight h1 {
-    font-size: 60px;
-  }
-
-  .heroRight p {
-    font-size: 30px;
-  }
-
   nav a:not(:nth-child(-n + 2)) {
     display: none;
-  }
-
-  .steps .text {
-    width: 70%;
-    padding: 15%;
   }
 }

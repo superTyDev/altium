@@ -8,10 +8,13 @@ import "../styles/globals.css";
 function setTheme(themeName) {
   localStorage.setItem("theme", themeName);
   document.documentElement.className = themeName;
+  if (themeName == "theme-light") {
+    document.getElementById("slider").checked = true;
+  }
 }
 // function to toggle between light and dark theme
-function toggleTheme() {
-  if (localStorage.getItem("theme") === "theme-dark") {
+function setCheckTheme(event) {
+  if (event.target.checked) {
     setTheme("theme-light");
   } else {
     setTheme("theme-dark");
@@ -168,7 +171,13 @@ export default function App({ Component, pageProps }) {
         <div className="switchContainer">
           <span>Theme</span>
           <label id="switch" className="switch">
-            <input type="checkbox" onChange={toggleTheme} id="slider" />
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                setCheckTheme(e);
+              }}
+              id="slider"
+            />
             <span className="slider round"></span>
           </label>
         </div>
