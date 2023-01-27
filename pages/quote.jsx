@@ -13,9 +13,36 @@ export default function Quote() {
 				</div>
 				<div className="left">
 					<div className={styles.solarSystem}>
-						<div className={styles.moon}></div>
-						<div className={styles.iss}></div>
-						<div className={styles.strat}></div>
+						<div className={styles.moon}>
+							<Image
+								src={
+									"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon.webp?v=1674686609885"
+								}
+								width={400}
+								height={400}
+								alt="Moon"
+							/>
+						</div>
+						<div className={styles.iss}>
+							<Image
+								src={
+									"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon.webp?v=1674686609885"
+								}
+								width={400}
+								height={400}
+								alt="ISS"
+							/>
+						</div>
+						<div className={styles.strat}>
+							<Image
+								src={
+									"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon.webp?v=1674686609885"
+								}
+								width={400}
+								height={400}
+								alt="Strat"
+							/>
+						</div>
 						<div className={styles.earth}>
 							<Image
 								className={styles.backgroundImage}

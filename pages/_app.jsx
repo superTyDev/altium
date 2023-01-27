@@ -80,10 +80,6 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<title>Altium Aeronautics</title>
 				<meta property="og:title" content="Altium Aeronautics" key="title" />
-				<link
-					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300"
-					rel="stylesheet"
-				/>
 			</Head>
 			<nav>
 				<Link href="/" id="logo">
