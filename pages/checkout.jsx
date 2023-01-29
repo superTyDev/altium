@@ -3,11 +3,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";
-import {
-	auth,
-	registerWithEmailAndPassword,
-	signInWithGoogle,
-} from "./../components/fbauth.js";
+import { auth } from "./../components/fbauth.js";
 
 import styles from "../styles/Login.module.css";
 import cStyles from "../styles/Checkout.module.css";
@@ -18,11 +14,6 @@ export default function Checkout() {
 	const [name, setName] = useState("");
 	const [user, loading, error] = useAuthState(auth);
 	const router = useRouter();
-
-	const register = () => {
-		if (!name) alert("Please enter name");
-		registerWithEmailAndPassword(name, email, password);
-	};
 
 	function LoginStrip() {
 		if (user) {

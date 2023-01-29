@@ -3,11 +3,11 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./../components/fbauth.js";
 import {
-	auth,
 	registerWithEmailAndPassword,
 	signInWithGoogle,
-} from "./../components/fbauth.js";
+} from "./../components/fblogin.js";
 
 import styles from "../styles/Login.module.css";
 

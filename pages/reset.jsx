@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import styles from "../styles/Login.module.css";
-import { auth, sendPasswordReset } from "./../components/fbauth.js";
+import { auth } from "./../components/fbauth.js";
+import { sendPasswordReset } from "./../components/fblogin.js";
 
 export default function Reset() {
 	const [email, setEmail] = useState("");
