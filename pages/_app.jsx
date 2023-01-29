@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useEffect } from "react";
 import "../styles/globals.css";
 
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "./../components/fbauth.js";
+
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
 	localStorage.setItem("theme", themeName);
@@ -64,16 +67,42 @@ function onPageLoad() {
 
 // Home function that is reflected across the site
 export default function App({ Component, pageProps }) {
+	const [user, loading, error] = useAuthState(auth);
+
 	useEffect(() => {
 		window.addEventListener("scroll", darkNav);
-
-		if (document.readyState === "complete") {
-			onPageLoad();
-		} else {
-			window.addEventListener("load", onPageLoad);
-			return () => document.removeEventListener("load", onPageLoad);
-		}
+		onPageLoad();
 	}, []);
+
+	function NavLoginButton({ onClick = () => {}, icon_name = false }) {
+		if (user) {
+			return (
+				<Link href="/dashboard" onClick={onClick}>
+					Dashboard
+					{icon_name && <i className="material-symbols-outlined">dashboard</i>}
+				</Link>
+			);
+		} else {
+			return (
+				<Link href="/login" onClick={onClick}>
+					Login
+					{icon_name && (
+						<i className="material-symbols-outlined">account_circle</i>
+					)}
+				</Link>
+			);
+		}
+	}
+
+	function NavLogoutButton() {
+		if (user) {
+			return (
+				<Link href="logout" onClick={closeNavLink}>
+					Logout<i className="material-symbols-outlined">logout</i>
+				</Link>
+			);
+		}
+	}
 
 	return (
 		<>
@@ -103,7 +132,7 @@ export default function App({ Component, pageProps }) {
 				>
 					☰
 				</Link>
-				<Link href="/login">Login</Link>
+				<NavLoginButton />
 				<Link href="/quote">Buy a Ticket</Link>
 			</nav>
 			<div className="sideNav">
@@ -135,6 +164,9 @@ export default function App({ Component, pageProps }) {
 						</Link>
 					</div>
 					<div>
+						<NavLoginButton onClick={closeNavLink} icon_name={true} />
+					</div>
+					{/* <div>
 						<Link href="/login" onClick={closeNavLink}>
 							Login <i className="material-symbols-outlined">account_circle</i>
 						</Link>
@@ -143,6 +175,9 @@ export default function App({ Component, pageProps }) {
 						<Link href="/dashboard" onClick={closeNavLink}>
 							Dashboard <i className="material-symbols-outlined">dashboard</i>
 						</Link>
+					</div> */}
+					<div>
+						<NavLogoutButton />
 					</div>
 					<div className="spacer"></div>
 					<div className="spacer"></div>

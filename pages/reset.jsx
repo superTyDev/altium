@@ -33,7 +33,7 @@ export default function Reset() {
 						/>
 					</div>
 					<button
-						className={styles.login__btn}
+						className={`${styles.login__btn} button`}
 						onClick={() => sendPasswordReset(email)}
 					>
 						Send password reset email

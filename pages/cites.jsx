@@ -10,12 +10,12 @@ export default function Cites() {
 				<p>A awesome site cannot be made with a lot of help.</p>
 				<p>
 					Not true citations, but this site was made possible by NodeJS, React,
-					Vite, Babel, Glitch, StackOverflow, VSCode, Git, OpenAI, NextJS,
-					Google, SVGBackgrounds, and many more.
+					Babel, Glitch, StackOverflow, VSCode, Git, OpenAI, NextJS, Google,
+					SVGBackgrounds, Pixabay, Digital Juice, and many more.
 				</p>
 				<ul>
 					<li>
-						Rocket 3D file,
+						Rocket 3D file,{" "}
 						<Link href="https://nasa3d.arc.nasa.gov/models">
 							NASA 3D Resources
 						</Link>
@@ -25,18 +25,28 @@ export default function Cites() {
 						<Link href="https://www.hdri-hub.com">HDRI Hub</Link>
 					</li>
 					<li>
-						NASA Mobile Launcher,
+						NASA Mobile Launcher,{" "}
 						<Link href="https://www.nasa.gov/exploration/systems/sls/MLmoves.html">
 							NASA Mobile Launcher
 						</Link>
 					</li>
 					<li>
-						Atmosphere Photograph,
-						<Link href="https://www.livescience.com/64825-why-earth-has-an-atmosphere.html"></Link>
+						Atmosphere Photograph,{" "}
+						<Link href="https://www.livescience.com/64825-why-earth-has-an-atmosphere.html">
+							Live Science
+						</Link>
 					</li>
 					<li>
-						SR 72 Concept Photo,
-						<Link href="https://www.nbcnews.com/sciencemain/son-blackbird-meet-sr-72-lockheeds-planned-new-hypersonic-spy-8c11528419"></Link>
+						SR 72 Concept Photo,{" "}
+						<Link href="https://www.nbcnews.com/sciencemain/son-blackbird-meet-sr-72-lockheeds-planned-new-hypersonic-spy-8c11528419">
+							NBC News
+						</Link>
+					</li>
+					<li>
+						Pictures of Adults,{" "}
+						<Link href="http://georgejenkinshs.com/about/administration/">
+							George Jenkins Staff Directory
+						</Link>
 					</li>
 				</ul>
 				<h2>Legal</h2>
@@ -58,7 +68,7 @@ export default function Cites() {
 					permissions and limitations under the License.
 				</p>
 
-				<h3>Terms of Use/Privacy Policy</h3>
+				<h3 id="terms">Terms of Use/Privacy Policy</h3>
 				<p>
 					Please review the following terms carefully. By accessing or using the
 					Service, you signify your agreement to these Terms of Use. If you do
@@ -87,7 +97,7 @@ export default function Cites() {
 					Any person caught being rude or making a public seen between the ages
 					of 13 and 98 can and will be thrown into space by security.
 				</p>
-				<h4>Privacy Policy</h4>
+				<h3 id="privacy">Privacy Policy</h3>
 
 				<p>
 					This data protection declaration explains the type, scope and purpose

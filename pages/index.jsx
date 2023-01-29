@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import * as React from "react";
+import React, { useEffect } from "react";
 
 import styles from "../styles/Index.module.css";
 
@@ -16,13 +16,13 @@ function rotateRocket(evt) {
 		rocket.setAttribute("camera-orbit", `${distance}deg 70deg 100%`);
 	}
 }
+
 function collapse() {
-	// console.log("I ran");
-	var coll = document.getElementsByClassName(styles.collapsible);
+	var coll = document.getElementsByClassName("collapsible");
 	if (coll) {
 		for (var i = 0; i < coll.length; i++) {
 			coll[i].addEventListener("click", function () {
-				this?.classList.toggle(styles.active);
+				this?.classList.toggle("active");
 				var content = this?.nextElementSibling;
 				if (content.style.maxHeight) {
 					content.style.maxHeight = null;
@@ -110,15 +110,10 @@ function onPageLoad() {
 }
 
 export default function Home() {
-	if (typeof window !== "undefined") {
+	useEffect(() => {
 		document.addEventListener("mousemove", rotateRocket);
-
-		if (document.readyState === "complete") {
-			onPageLoad();
-		} else {
-			window.addEventListener("load", onPageLoad);
-		}
-	}
+		onPageLoad();
+	}, []);
 
 	return (
 		<>
@@ -547,10 +542,10 @@ export default function Home() {
 					</Link>
 				</div>
 
-				<button type="button" className={styles.collapsible}>
+				<button type="button" className="collapsible">
 					General
 				</button>
-				<div className={styles.collapCont}>
+				<div className="collapCont">
 					<ul>
 						<li>Passport & ID</li>
 						<li>Lightweight Sweatshirt</li>
@@ -564,10 +559,10 @@ export default function Home() {
 						</li>
 					</ul>
 				</div>
-				<button type="button" className={styles.collapsible}>
+				<button type="button" className="collapsible">
 					For Longer Trips
 				</button>
-				<div className={styles.collapCont}>
+				<div className="collapCont">
 					<ul>
 						<li>Clothing</li>
 					</ul>

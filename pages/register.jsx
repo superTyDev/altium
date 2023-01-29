@@ -65,11 +65,11 @@ export default function Register() {
 							placeholder="Password"
 						/>
 					</div>
-					<button className={styles.login__btn} onClick={register}>
+					<button className={`${styles.login__btn} button`} onClick={register}>
 						Register
 					</button>
 					<button
-						className={[styles.login__btn, styles.login__google].join(" ")}
+						className={`${styles.login__btn} ${styles.login__google} button`}
 						onClick={signInWithGoogle}
 					>
 						Register with Google

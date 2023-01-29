@@ -1,19 +1,20 @@
 /* Generic styles */
 html {
   scroll-behavior: smooth;
+
   --accent: #c84630;
   --background: #e2e1e1;
   --background-accent: #00346488;
   --grey-background-accent: #aaaaaa55;
+  --input-bc: #44444444;
   --nav-bar: #ffffffdd;
   --text: black;
   --hover-color: #ccc;
 }
 
 html.theme-dark {
-  --accent: #c84630;
   --background: #003464;
-  --background-accent: rgb(226, 225, 225);
+  --background-accent: #e2e1e1;
   --grey-background-accent: #ffffff22;
   --nav-bar: #003464dd;
   --text: #eee;
@@ -290,6 +291,53 @@ nav #logo {
   background-color: var(--background);
 }
 
+.collapsible {
+  background-color: #ffffff44;
+  color: var(--text);
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  padding: 10px 15px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.collapsible:hover,
+.collapsible.active {
+  background-color: white;
+  color: black;
+  border-color: white;
+}
+
+.collapsible:hover:after,
+.collapsible.active:after {
+  border-top-color: black;
+}
+
+.collapCont {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.collapsible:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  border-top: 8px solid var(--text);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  transition: all 0.5s;
+}
+
+.collapsible.active:after {
+  transform: rotate(0.5turn);
+}
+
 /* main page */
 .content {
   min-height: calc(100vh - 200px);
@@ -302,6 +350,7 @@ nav #logo {
 .page.flex {
   display: flex;
   flex-direction: row;
+  gap: 20px;
 }
 
 .page.flex .left,

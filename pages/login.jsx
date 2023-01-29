@@ -22,7 +22,13 @@ export default function Login() {
 			// maybe trigger a loading screen
 			return;
 		}
-		if (user) router.push("/dashboard");
+		if (user) {
+			if (router.query.redirect != null) {
+				router.push(router.query.redirect);
+			} else {
+				router.push("/dashboard");
+			}
+		}
 	}, [user, loading, router]);
 	return (
 		<>
@@ -52,13 +58,13 @@ export default function Login() {
 						/>
 					</div>
 					<button
-						className={styles.login__btn}
+						className={`${styles.login__btn} button`}
 						onClick={() => logInWithEmailAndPassword(email, password)}
 					>
 						Login
 					</button>
 					<button
-						className={[styles.login__btn, styles.login__google].join(" ")}
+						className={`${styles.login__btn} ${styles.login__google} button`}
 						onClick={signInWithGoogle}
 					>
 						Login with Google
