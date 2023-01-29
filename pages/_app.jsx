@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
+
 import "../styles/globals.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
