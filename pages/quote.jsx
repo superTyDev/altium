@@ -210,8 +210,8 @@ export default function Quote() {
 							</button>
 							<div className="collapCont">
 								<div className={styles.collapCont}>
-									<div>Max Height: 6'6"</div>
-									<div>Min Height: 4'</div>
+									<div>Max Height: 6&apos;6&quot;</div>
+									<div>Min Height: 4&apos;</div>
 									<div>Max Weight: 250 lbs</div>
 									<div>Min Age: 12</div>
 									<div>Must pass fitness and training course.</div>
