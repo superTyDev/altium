@@ -12,7 +12,8 @@
 
 .ticketForm select,
 .ticketForm button,
-.overlayRight button {
+.overlayRight button,
+.cart button {
 	padding: 8px 10px;
 	background-color: var(--background);
 	/* color: var(--text); */
@@ -21,7 +22,8 @@
 }
 
 .ticketForm button,
-.overlayRight button {
+.overlayRight button,
+.cart button {
 	box-shadow: 5px 5px 5px #0000001a;
 }
 
@@ -35,12 +37,13 @@
 	color: var(--text);
 }
 
-.ticketForm button[type="submit"] {
+.ticketForm button.next {
 	width: 100%;
 }
 
-.ticketForm button[type="submit"] div,
-.overlayBar .overlayRight button div {
+.ticketForm button.next div,
+.overlayBar .overlayRight button div,
+.cart button div {
 	display: flex;
 	gap: 5px;
 	font-size: 15px;
@@ -134,7 +137,7 @@
 	position: relative;
 	height: min(100%, 800px);
 	width: 100%;
-	aspect-ratio: 5 / 7;
+	/* aspect-ratio: 5 / 7; */
 	overflow: hidden;
 	transition: all .2s;
 }
@@ -211,11 +214,12 @@
 
 .overlayBar {
 	position: sticky;
-	bottom: 0;
+	bottom: -2px;
 	left: 0;
 	right: 0;
 	background-color: var(--background);
-	box-shadow: 0 -4px 5px #0000001a, 0 4px 5px #0000001a;
+	box-shadow: 0 -4px 5px #0000001a;
+	border-bottom: 2px var(--text) solid;
 	z-index: 1;
 	display: flex;
 }
@@ -240,4 +244,36 @@
 	align-items: center;
 	justify-content: flex-start;
 	padding: 10px;
+}
+
+.overlayBar .overlayRight .buttonCont {
+	display: flex;
+	gap: 10px;
+}
+
+/* Checkout Part */
+.securityCode {
+	flex: 0;
+	margin-left: 10px;
+}
+
+.loginDetails {
+	padding: 10px 0;
+}
+
+.cart table {
+	width: 100%;
+	max-width: 500px;
+}
+
+.cart table td {
+	padding: 5px;
+}
+
+.cart table tr:nth-child(odd) {
+	background-color: #88888844;
+}
+
+.cart table tr:hover {
+	background-color: #88888888;
 }

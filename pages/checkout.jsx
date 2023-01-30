@@ -8,7 +8,7 @@ import { auth } from "./../components/fbauth.js";
 import styles from "../styles/Login.module.css";
 import cStyles from "../styles/Checkout.module.css";
 
-export default function Checkout() {
+export default function Checkout(req, res, next) {
 	const [email, setEmail] = useState("");
 	const [cc, setCC] = useState({});
 	const [name, setName] = useState("");
@@ -20,7 +20,7 @@ export default function Checkout() {
 			return (
 				<>
 					<div className={cStyles.loginDetails}>
-						Welcome, {user.displayName}!{" "}
+						Purchasing as {user.displayName}.{" "}
 						<Link href="/dashboard">View Dashboard</Link>
 					</div>
 				</>
@@ -66,6 +66,7 @@ export default function Checkout() {
 				<h1>Checkout</h1>
 				<LoginStrip />
 				<hr />
+
 				<div className={styles.input__container}>
 					<i className="material-symbols-outlined">credit_card</i>
 					<input

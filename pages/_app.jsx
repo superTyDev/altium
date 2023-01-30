@@ -1,12 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import "../styles/globals.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
+import { redirect } from "next/dist/server/api-utils";
 
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
@@ -69,6 +70,7 @@ function onPageLoad() {
 // Home function that is reflected across the site
 export default function App({ Component, pageProps }) {
 	const [user, loading, error] = useAuthState(auth);
+	const [errors, setErrors] = useState([]); // { cont: [message], type: [name of Material UI icon], time: Date.now() }
 
 	useEffect(() => {
 		window.addEventListener("scroll", darkNav);
@@ -80,16 +82,14 @@ export default function App({ Component, pageProps }) {
 			return (
 				<Link href="/dashboard" onClick={onClick}>
 					Dashboard
-					{icon_name && <i className="material-symbols-outlined">dashboard</i>}
+					{icon_name && <i>dashboard</i>}
 				</Link>
 			);
 		} else {
 			return (
 				<Link href="/login" onClick={onClick}>
 					Login
-					{icon_name && (
-						<i className="material-symbols-outlined">account_circle</i>
-					)}
+					{icon_name && <i>account_circle</i>}
 				</Link>
 			);
 		}
@@ -99,10 +99,29 @@ export default function App({ Component, pageProps }) {
 		if (user) {
 			return (
 				<Link href="logout" onClick={closeNavLink}>
-					Logout<i className="material-symbols-outlined">logout</i>
+					Logout<i>logout</i>
 				</Link>
 			);
 		}
+	}
+
+	function ErrorMessage() {
+		const messages = errors.map(
+			(error, n) =>
+				error.time + 10 * 1000 > Date.now() && (
+					<div
+						className={error.type}
+						key={n}
+						style={{
+							animationDelay: `${(error.time - Date.now()) / 1000 + 5}s`,
+						}}
+					>
+						{error.cont}
+						<i>{error.type}</i>
+					</div>
+				)
+		);
+		return <div className="errorMessage">{messages}</div>;
 	}
 
 	return (
@@ -151,17 +170,17 @@ export default function App({ Component, pageProps }) {
 					</div>
 					<div>
 						<Link href="/about" onClick={closeNavLink}>
-							About<i className="material-symbols-outlined">info</i>
+							About<i>info</i>
 						</Link>
 					</div>
 					<div>
 						<Link href="/flights" onClick={closeNavLink}>
-							Our Flights<i className="material-symbols-outlined">flight</i>
+							Our Flights<i>flight</i>
 						</Link>
 					</div>
 					<div>
 						<Link href="/contact" onClick={closeNavLink}>
-							Contact<i className="material-symbols-outlined">call</i>
+							Contact<i>call</i>
 						</Link>
 					</div>
 					<div>
@@ -169,12 +188,12 @@ export default function App({ Component, pageProps }) {
 					</div>
 					{/* <div>
 						<Link href="/login" onClick={closeNavLink}>
-							Login <i className="material-symbols-outlined">account_circle</i>
+							Login <i>account_circle</i>
 						</Link>
 					</div>
 					<div>
 						<Link href="/dashboard" onClick={closeNavLink}>
-							Dashboard <i className="material-symbols-outlined">dashboard</i>
+							Dashboard <i>dashboard</i>
 						</Link>
 					</div> */}
 					<div>
@@ -188,7 +207,8 @@ export default function App({ Component, pageProps }) {
 			</div>
 			<div className="content">
 				{/* Router specifies which component to insert here as the main content */}
-				<Component {...pageProps} />
+				<Component {...pageProps} errors={errors} setErrors={setErrors} />
+				<ErrorMessage />
 			</div>
 			{/* Footer links to Home and About, Link elements matched in router.jsx */}
 			<footer className="footer">

@@ -6,7 +6,7 @@ html {
   --background: #e2e1e1;
   --background-accent: #00346488;
   --grey-background-accent: #aaaaaa55;
-  --input-bc: #44444444;
+  --input-bc: #88888822;
   --nav-bar: #ffffffdd;
   --text: black;
   --hover-color: #ccc;
@@ -110,6 +110,20 @@ a.buttonNext {
   100% {
     transform: rotate(0deg);
   }
+}
+
+i {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 }
 
 .spacer {
@@ -341,6 +355,8 @@ nav #logo {
 /* main page */
 .content {
   min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
 }
 
 .page {
@@ -361,6 +377,49 @@ nav #logo {
 model-viewer {
   width: 100%;
   height: 100%;
+}
+
+.errorMessage {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.errorMessage div {
+  animation: hideNoHeight .5s ease-in-out 5s;
+  animation-fill-mode: both;
+  background-color: lightgreen;
+  color: black;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.errorMessage div.warning {
+  background-color: darkred;
+  color: white;
+}
+
+@keyframes hideNoHeight {
+  0% {
+    max-width: 100%;
+  }
+
+  100% {
+    max-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* footer */
