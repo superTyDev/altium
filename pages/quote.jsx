@@ -46,9 +46,53 @@ function ccFormat(value) {
 	return parts.length > 1 ? parts.join(" ") : value;
 }
 
+function LoginStrip({ user, name, setName, email, setEmail }) {
+	if (user) {
+		console.log(user);
+		return (
+			<>
+				<div className={styles.loginDetails}>
+					Purchasing as {user.displayName}.{" "}
+					<Link href="/dashboard">View Dashboard</Link>
+				</div>
+			</>
+		);
+	} else {
+		return (
+			<div>
+				<div className={styles.loginDetails}>
+					<Link href="/login?redirect=/checkout">Login to Save Info</Link>
+				</div>
+				{/* <div className={lStyles.input__container}>
+					<i className="material-symbols-outlined">account_circle</i>
+					<input
+						type="text"
+						className={lStyles.login__textBox}
+						value={name}
+						onChange={(e) => setName(e.target.value)}
+						placeholder="Full Name"
+						key={"nonLogin_nameInput"}
+					/>
+				</div> */}
+				<div className={lStyles.input__container}>
+					<i className="material-symbols-outlined">mail</i>
+					<input
+						type="text"
+						className={lStyles.login__textBox}
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						placeholder="E-mail Address"
+						key={"nonLogin_emailInput"}
+					/>
+				</div>
+			</div>
+		);
+	}
+}
+
 export default function Quote({ errors, setErrors }) {
 	const router = useRouter();
-	const [formStep, setFormStep] = React.useState(0);
+	const [formStep, setFormStep] = React.useState(1);
 
 	useEffect(() => {
 		onPageLoad();
@@ -58,10 +102,11 @@ export default function Quote({ errors, setErrors }) {
 	const [trip, setTrip] = useState("Select Trip On Image");
 	const [passengers, setPassengers] = useState(1);
 	const [launchDate, setLaunchDate] = useState("Spring 2023");
+
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 
 	const [cc, setCC] = useState({});
-	const [name, setName] = useState("");
 
 	const [user, loading, error] = useAuthState(auth);
 	// const router = useRouter();
@@ -91,120 +136,93 @@ export default function Quote({ errors, setErrors }) {
 					</>
 				);
 		});
-		console.log(tempList);
+		// console.log(tempList);
 		return <tr>{tempList}</tr>;
 	}
 
 	function checkout() {
 		var validCheckout = true;
+		var localErrors = [];
 		if (sumPrice == 0) {
-			setErrors([
-				...errors,
-				{
-					cont: "No Purchase",
-					type: "warning",
-					time: Date.now(),
-				},
-			]);
-			validCheckout = false;
+			localErrors.push({
+				cont: "No Purchase",
+				type: "warning",
+				time: Date.now(),
+			});
 		}
 		if (!trip) {
-			setErrors([
-				...errors,
-				{
-					cont: "Please Select Trip",
-					type: "warning",
-					time: Date.now(),
-				},
-			]);
-			validCheckout = false;
+			localErrors.push({
+				cont: "Please Select Trip",
+				type: "warning",
+				time: Date.now(),
+			});
 		}
 		if (!email && !user) {
-			setErrors([
-				...errors,
-				{
-					cont: "Please Login or Enter Email",
+			localErrors.push({
+				cont: "Please Login or Enter Email",
+				type: "warning",
+				time: Date.now(),
+			});
+		} else if (!user) {
+			if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+				localErrors.push({
+					cont: "Invalid Email",
 					type: "warning",
 					time: Date.now(),
-				},
-			]);
-			validCheckout = false;
+				});
+			}
 		}
-		if (!name && !user) {
-			setErrors([
-				...errors,
-				{
-					cont: "Please Login or Enter Name",
+		if (!cc.ccnum || !cc.cvv || !cc.expMon || !cc.expYear) {
+			localErrors.push({
+				cont: "Please Enter Credit Card Info",
+				type: "warning",
+				time: Date.now(),
+			});
+		} else {
+			if (parseInt(cc.ccnum?.length) != 19) {
+				localErrors.push({
+					cont: "Invalid Credit Card",
 					type: "warning",
 					time: Date.now(),
-				},
-			]);
-			validCheckout = false;
-		}
-		if (!cc.ccnum || !cc.cvv || !cc.expiration) {
-			setErrors([
-				...errors,
-				{
-					cont: "Please Enter Credit Card Info",
+				});
+			}
+			if (parseInt(cc.cvv?.length) > 4) {
+				localErrors.push({
+					cont: "Invalid CVV",
 					type: "warning",
 					time: Date.now(),
-				},
-			]);
-			validCheckout = false;
+				});
+			}
+			if (parseInt(cc.expMon?.length) > 2 || parseInt(cc.expMon?.length) < 2) {
+				localErrors.push({
+					cont: "Invalid Month",
+					type: "warning",
+					time: Date.now(),
+				});
+			}
+			if (
+				parseInt(cc.expYear?.length) > 4 ||
+				parseInt(cc.expYear?.length) < 4
+			) {
+				localErrors.push({
+					cont: "Invalid Year",
+					type: "warning",
+					time: Date.now(),
+				});
+			}
 		}
-		if (validCheckout) {
+		if (localErrors.length == 0) {
 			addDoc(collection(db, "flights"), {
 				trip: trip,
 				passengers: passengers,
-				email: user.email || email,
-				name: user.displayName || name,
+				email: user?.email || email,
+				uid: user?.uid || "noAccount",
 				addOns: addOns(),
 				launchDate: Timestamp.fromDate(new Date(launchDate)),
 			});
-			router.push("/dashboard");
-		}
-	}
-
-	function LoginStrip() {
-		if (user) {
-			return (
-				<>
-					<div className={styles.loginDetails}>
-						Purchasing as {user.displayName}.{" "}
-						<Link href="/dashboard">View Dashboard</Link>
-					</div>
-				</>
-			);
+			setErrors([{ cont: "Purchased", type: "info", time: Date.now() }]);
 		} else {
-			return (
-				<>
-					<div>
-						<div className={styles.loginDetails}>
-							<Link href="/login?redirect=/checkout">Login to Save Info</Link>
-						</div>
-						<div className={lStyles.input__container}>
-							<i className="material-symbols-outlined">account_circle</i>
-							<input
-								type="text"
-								className={lStyles.login__textBox}
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-								placeholder="Full Name"
-							/>
-						</div>
-						<div className={lStyles.input__container}>
-							<i className="material-symbols-outlined">mail</i>
-							<input
-								type="text"
-								className={lStyles.login__textBox}
-								value={email}
-								onChange={(e) => setEmail(e.target.value)}
-								placeholder="E-mail Address"
-							/>
-						</div>
-					</div>
-				</>
-			);
+			setErrors([...errors, ...localErrors]);
 		}
 	}
 
@@ -529,7 +547,14 @@ export default function Quote({ errors, setErrors }) {
 				<>
 					<div className="page">
 						<h1>Checkout</h1>
-						<LoginStrip />
+						<LoginStrip
+							key={"nonLoginData"}
+							user={user}
+							name={name}
+							setName={setName}
+							email={email}
+							setEmail={setEmail}
+						/>
 						<hr />
 						<div className={styles.cart}>
 							<h2>Cart</h2>
@@ -575,11 +600,18 @@ export default function Quote({ errors, setErrors }) {
 						<div className={lStyles.input__container}>
 							<i className="material-symbols-outlined">calendar_month</i>
 							<input
-								type="date"
+								type="number"
 								className={`${lStyles.login__textBox}`}
-								value={cc.expiration}
-								onChange={(e) => setCC({ ...cc, expiration: e.target.value })}
-								placeholder="Expiration Year"
+								value={cc.expMon}
+								onChange={(e) => setCC({ ...cc, expMon: e.target.value })}
+								placeholder="Expiration Month (mm)"
+							/>
+							<input
+								type="number"
+								className={`${lStyles.login__textBox} ${styles.securityCode}`}
+								value={cc.expYear}
+								onChange={(e) => setCC({ ...cc, expYear: e.target.value })}
+								placeholder="Expiration Year (yyyy)"
 							/>
 						</div>
 					</div>

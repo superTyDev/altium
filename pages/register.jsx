@@ -11,22 +11,65 @@ import {
 
 import styles from "../styles/Login.module.css";
 
-export default function Register() {
+export default function Register({ errors, setErrors }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [name, setName] = useState("");
 	const [user, loading, error] = useAuthState(auth);
 	const router = useRouter();
 
-	const register = () => {
-		if (!name) alert("Please enter name");
-		registerWithEmailAndPassword(name, email, password);
-	};
-
 	useEffect(() => {
 		if (loading) return;
 		if (user) router.push("/dashboard");
 	}, [user, loading, router]);
+
+	function validateForm() {
+		var localErrors = [];
+
+		if (!email) {
+			localErrors.push({
+				cont: "Please enter email",
+				type: "warning",
+				time: Date.now(),
+			});
+		} else {
+			if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+				localErrors.push({
+					cont: "Invalid Email",
+					type: "warning",
+					time: Date.now(),
+				});
+			}
+		}
+		if (!name) {
+			localErrors.push({
+				cont: "Please enter name",
+				type: "warning",
+				time: Date.now(),
+			});
+		} else {
+			if (name.length < 5) {
+				localErrors.push({
+					cont: "Name too short",
+					type: "warning",
+					time: Date.now(),
+				});
+			}
+		}
+		if (!password) {
+			localErrors.push({
+				cont: "Please enter password",
+				type: "warning",
+				time: Date.now(),
+			});
+		}
+		if (errors.length == 0) {
+			registerWithEmailAndPassword(name, email, password);
+			router.push("/dashboard");
+		} else {
+			setErrors([...errors, ...localErrors]);
+		}
+	}
 
 	return (
 		<>
@@ -65,7 +108,10 @@ export default function Register() {
 							placeholder="Password"
 						/>
 					</div>
-					<button className={`${styles.login__btn} button`} onClick={register}>
+					<button
+						className={`${styles.login__btn} button`}
+						onClick={validateForm}
+					>
 						Register
 					</button>
 					<button

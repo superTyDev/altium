@@ -9,6 +9,7 @@ import {
 	signInWithEmailAndPassword,
 	signInWithPopup,
 	signOut,
+	updateProfile,
 } from "firebase/auth";
 import {
 	addDoc,
@@ -60,11 +61,17 @@ const logInWithEmailAndPassword = async (email, password) => {
 // Register New User
 const registerWithEmailAndPassword = async (name, email, password) => {
 	try {
-		const res = await createUserWithEmailAndPassword(auth, email, password);
-		const user = res.user;
+		const { user } = await createUserWithEmailAndPassword(
+			auth,
+			email,
+			password
+		);
+
+		await updateProfile(user, { displayName: name });
+
 		await addDoc(collection(db, "users"), {
 			uid: user.uid,
-			name,
+			displayName: name,
 			authProvider: "local",
 			email,
 		});

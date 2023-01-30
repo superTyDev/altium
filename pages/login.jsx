@@ -11,7 +11,7 @@ import {
 
 import styles from "../styles/Login.module.css";
 
-export default function Login() {
+export default function Login({ errors, setErrors }) {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [user, loading, error] = useAuthState(auth);
@@ -30,6 +30,31 @@ export default function Login() {
 			}
 		}
 	}, [user, loading, router]);
+
+	function validateForm() {
+		var localErrors = [];
+		if (!email) {
+			localErrors.push({
+				cont: "Please enter email",
+				type: "warning",
+				time: Date.now(),
+			});
+		}
+		if (!password) {
+			localErrors.push({
+				cont: "Please enter password",
+				type: "warning",
+				time: Date.now(),
+			});
+		}
+		if (localErrors.length == 0) {
+			logInWithEmailAndPassword(email, password);
+			router.push("/dashboard");
+		} else {
+			setErrors([...errors, ...localErrors]);
+		}
+	}
+
 	return (
 		<>
 			<div className="navSpacer"></div>
@@ -59,7 +84,7 @@ export default function Login() {
 					</div>
 					<button
 						className={`${styles.login__btn} button`}
-						onClick={() => logInWithEmailAndPassword(email, password)}
+						onClick={validateForm}
 					>
 						Login
 					</button>

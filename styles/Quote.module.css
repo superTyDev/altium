@@ -5,7 +5,7 @@
 	gap: 5px;
 }
 
-.ticketForm>div {
+.ticketForm > div {
 	margin-bottom: 20px;
 	padding: 5px 0;
 }
@@ -103,11 +103,11 @@
 	background-color: #eee;
 }
 
-.ticketForm .checkContainer:hover input~.checkmark {
+.ticketForm .checkContainer:hover input ~ .checkmark {
 	background-color: #ccc;
 }
 
-.ticketForm .checkContainer input:checked~.checkmark {
+.ticketForm .checkContainer input:checked ~ .checkmark {
 	background-color: var(--accent);
 }
 
@@ -117,7 +117,7 @@
 	display: none;
 }
 
-.ticketForm .checkContainer input:checked~.checkmark:after {
+.ticketForm .checkContainer input:checked ~ .checkmark:after {
 	display: block;
 }
 
@@ -139,14 +139,14 @@
 	width: 100%;
 	/* aspect-ratio: 5 / 7; */
 	overflow: hidden;
-	transition: all .2s;
+	transition: all 0.2s;
 }
 
 .solarSystem input {
 	display: none;
 }
 
-.solarSystem input:checked+label {
+.solarSystem input:checked + label {
 	border-width: 5px;
 	background-color: #21c0ff;
 }
@@ -155,7 +155,7 @@
 	display: block;
 }
 
-.solarSystem>label {
+.solarSystem > label {
 	box-sizing: border-box;
 	position: absolute;
 	bottom: 0%;
@@ -166,10 +166,9 @@
 	aspect-ratio: 1 / 1;
 	border: 2px solid white;
 	border-radius: 50%;
-	transition: all .1s;
+	transition: all 0.1s;
 
-	background-image:
-		radial-gradient(circle at center, transparent, #003464),
+	background-image: radial-gradient(circle at center, transparent, #003464),
 		radial-gradient(white, #ffffff88 1px, transparent 2px),
 		radial-gradient(white, #ffffff44 1px, transparent 4px),
 		radial-gradient(white, #ffffffff 1px, transparent 4px);
@@ -177,29 +176,30 @@
 	background-position: 0 0, 90px 60px, 10px 270px, 60px 40px;
 }
 
-.solarSystem>label.moon {
+.solarSystem > label.moon {
 	height: 200%;
 }
 
-.solarSystem>label.iss {
+.solarSystem > label.iss {
 	height: 160%;
 }
 
-.solarSystem>label.strat {
+.solarSystem > label.strat {
 	height: 120%;
 }
 
-.solarSystem>label.earth {
+.solarSystem > label.earth {
 	height: 80%;
+	background-color: green;
 }
 
-.solarSystem>label.earth img {
+.solarSystem > label.earth img {
 	width: 100%;
 	height: auto;
 	aspect-ratio: 1 / 1;
 }
 
-.solarSystem>label .memo {
+.solarSystem > label .memo {
 	position: absolute;
 	left: 50%;
 	top: 5%;
@@ -208,7 +208,7 @@
 	color: white;
 }
 
-.solarSystem>label:not(.earth):hover {
+.solarSystem > label:not(.earth):hover {
 	border-width: 5px;
 }
 
