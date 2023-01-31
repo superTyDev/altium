@@ -30,7 +30,7 @@ export default function Ships() {
 							company dedicated to providing safe and exciting intergalactic
 							journeys. Our team of highly experienced astronauts, engineers and
 							scientists specialize in creating the most advanced spacecrafts
-							for our customers’ needs.
+							for our customers&apos; needs.
 						</p>
 
 						<p>
@@ -39,22 +39,23 @@ export default function Ships() {
 							both comfortable and secure. Our state-of-the-art vessels are
 							designed with safety as a top priority, enabling passengers to
 							explore the cosmos without worrying about their safety or
-							security. We offer traditional trips around Earth's orbit as well
-							as deep space missions for those who want something more
+							security. We offer traditional trips around Earth&apos;s orbit as
+							well as deep space missions for those who want something more
 							adventurous.
 						</p>
 
 						<p>
 							At Altium Aeronautics, we believe that everyone should have access
 							to space travel regardless of financial means or technical
-							knowledge. That’s why we strive to keep our prices low while still
-							providing high quality service and equipment – so that anyone can
-							enjoy the wonders of outer space without breaking the bank!
+							knowledge. That&apos;s why we strive to keep our prices low while
+							still providing high quality service and equipment – so that
+							anyone can enjoy the wonders of outer space without breaking the
+							bank!
 						</p>
 
 						<p>
-							If you’re looking for an interstellar adventure like no other then
-							look no further than Altium Aeronautics!
+							If you&apos;re looking for an interstellar adventure like no other
+							then look no further than Altium Aeronautics!
 						</p>
 						<div className="buttonCont">
 							<a href="/flights" className="button">
