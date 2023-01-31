@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
 import { db } from "./../components/fblogin.js";
 
+import Link from "next/link";
 import styles from "../styles/Dashboard.module.css";
 
 /**
@@ -45,12 +46,12 @@ const ListFlights = ({ flights }) => {
 					</div>
 				</div>
 				<div className="buttonCont">
-					<a href="/quote" className="button">
+					<Link href="/quote" className="button">
 						Buy a Ticket
-					</a>
-					<a href="/flight" className="button">
+					</Link>
+					<Link href="/flight" className="button">
 						Explore Flights
-					</a>
+					</Link>
 				</div>
 			</div>
 		);
