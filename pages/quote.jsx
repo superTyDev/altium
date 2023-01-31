@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
-import { db } from "./../components/fblogin.js";
+import { db } from "./../components/fbdata.js";
 import { doc, setDoc, addDoc, collection, Timestamp } from "firebase/firestore";
 
 import styles from "../styles/Quote.module.css";
@@ -48,7 +48,7 @@ function ccFormat(value) {
 
 function LoginStrip({ user, name, setName, email, setEmail }) {
 	if (user) {
-		console.log(user);
+		// console.log(user);
 		return (
 			<>
 				<div className={styles.loginDetails}>
@@ -92,7 +92,7 @@ function LoginStrip({ user, name, setName, email, setEmail }) {
 
 export default function Quote({ errors, setErrors }) {
 	const router = useRouter();
-	const [formStep, setFormStep] = React.useState(1);
+	const [formStep, setFormStep] = React.useState(0);
 
 	useEffect(() => {
 		onPageLoad();
@@ -101,7 +101,8 @@ export default function Quote({ errors, setErrors }) {
 	const [price, setPrice] = useState({ init: 0 });
 	const [trip, setTrip] = useState("Select Trip On Image");
 	const [passengers, setPassengers] = useState(1);
-	const [launchDate, setLaunchDate] = useState("Spring 2023");
+	const [launchDate, setLaunchDate] = useState("spring23");
+	const [confNum, setConfNum] = useState(null);
 
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
@@ -140,7 +141,7 @@ export default function Quote({ errors, setErrors }) {
 		return <tr>{tempList}</tr>;
 	}
 
-	function checkout() {
+	async function checkout() {
 		var validCheckout = true;
 		var localErrors = [];
 		if (sumPrice == 0) {
@@ -179,7 +180,7 @@ export default function Quote({ errors, setErrors }) {
 				time: Date.now(),
 			});
 		} else {
-			if (parseInt(cc.ccnum?.length) != 19) {
+			if (cc.ccnum.replaceAll(" ", "").length != 16) {
 				localErrors.push({
 					cont: "Invalid Credit Card",
 					type: "warning",
@@ -193,33 +194,50 @@ export default function Quote({ errors, setErrors }) {
 					time: Date.now(),
 				});
 			}
-			if (parseInt(cc.expMon?.length) > 2 || parseInt(cc.expMon?.length) < 2) {
+			if (
+				parseInt(cc.expMon?.length) > 2 ||
+				parseInt(cc.expMon?.length) < 2 ||
+				parseInt(cc.expMon) > 12
+			) {
 				localErrors.push({
-					cont: "Invalid Month",
+					cont: "Invalid Month (mm)",
 					type: "warning",
 					time: Date.now(),
 				});
 			}
 			if (
 				parseInt(cc.expYear?.length) > 4 ||
-				parseInt(cc.expYear?.length) < 4
+				parseInt(cc.expYear?.length) < 4 ||
+				parseInt(cc.expYear) < 2023
 			) {
 				localErrors.push({
-					cont: "Invalid Year",
+					cont: "Invalid Year (yyyy)",
 					type: "warning",
 					time: Date.now(),
 				});
 			}
 		}
 		if (localErrors.length == 0) {
-			addDoc(collection(db, "flights"), {
+			var tempLaunchDate = launchDate;
+
+			tempLaunchDate = tempLaunchDate
+				.replace("spring", "March 3,")
+				.replace("summer", "June 6,")
+				.replace("fall", "September 8,")
+				.replace("winter", "December 12,");
+			tempLaunchDate += " 8:00 AM EST";
+
+			const flighPlan = await addDoc(collection(db, "flights"), {
 				trip: trip,
 				passengers: passengers,
 				email: user?.email || email,
 				uid: user?.uid || "noAccount",
 				addOns: addOns(),
-				launchDate: Timestamp.fromDate(new Date(launchDate)),
+				launchDate: Timestamp.fromDate(new Date(tempLaunchDate)),
 			});
+			setConfNum(flighPlan.id);
+
+			setFormStep(2);
 			setErrors([{ cont: "Purchased", type: "info", time: Date.now() }]);
 		} else {
 			setErrors([...errors, ...localErrors]);
@@ -614,6 +632,34 @@ export default function Quote({ errors, setErrors }) {
 								placeholder="Expiration Year (yyyy)"
 							/>
 						</div>
+					</div>
+					<div className="spacer"></div>
+				</>
+			)}
+			{formStep === 2 && (
+				<>
+					<div className="page">
+						<h1>Thank you for your purchase!</h1>
+						<p>
+							<strong>Confirmation Num:</strong>
+							{confNum}
+						</p>
+						<p>
+							Your ticket will be emailed to you shortly. If you have an
+							account, the ticket will appear in dashboard.
+						</p>
+						<p>
+							On launch day, bring the{" "}
+							<strong>QR Code Ticket and Proof of Identity</strong>. Please
+							arrive at <strong>8 AM EST</strong> to provide time for space suit
+							fitting and other pre-launch settup.
+						</p>
+						<p>
+							In the meantime, don&apos;t forget to complete the training course
+							and submit a physical.
+						</p>
+						<p>Thanks for choosing Altium Aero!</p>
+						<i>rocket_launch</i>
 					</div>
 					<div className="spacer"></div>
 				</>

@@ -11,20 +11,13 @@ import {
 	signOut,
 	updateProfile,
 } from "firebase/auth";
-import {
-	addDoc,
-	collection,
-	getDocs,
-	getFirestore,
-	query,
-	where,
-} from "firebase/firestore";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { app, auth } from "./fbauth.js";
+import { db } from "./fbdata.js";
 
 // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
 // const auth = getAuth(app);
-const db = getFirestore(app);
 
 // Sign In With Google
 const googleProvider = new GoogleAuthProvider();
