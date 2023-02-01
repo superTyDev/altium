@@ -8,9 +8,7 @@ export default function Sitemap() {
 		<>
 			<div className="navSpacer"></div>
 			<div className={`page flex ${styles.linkCont}`}>
-				
 				<h1 className={styles.fullWidth}>Sitemap</h1>
-				
 				<div className="left">
 					<h2>Main</h2>
 					<Link href="/" className="button">
