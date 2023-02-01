@@ -78,7 +78,7 @@ export default function Flights() {
 			image:
 				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon-labyr-nth-deviantart-0.png?v=1673519854551",
 			miniExplanation:
-				"Take a three day trip into the frontier of space. Join the ranks of astronauts as you travel to the moon. Every guest has the opportunity to witness the galaxy on a space walk.",
+				"Take a trip into the frontier of space. Join the ranks of astronauts as you travel to the moon. Every guest has the opportunity to witness the galaxy on a space walk.",
 			length: "1 Week",
 			price: (7000).toLocaleString(),
 			longExplanation: "",
@@ -89,7 +89,7 @@ export default function Flights() {
 			image:
 				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930",
 			miniExplanation:
-				"Looking for an extended stay in space? Spend two weeks in this weightless environment.",
+				"Looking for an extended stay in space? Spend two days in this weightless environment.",
 			longExplanation: "",
 			length: "3 Days",
 			price: (3000).toLocaleString(),
@@ -100,7 +100,7 @@ export default function Flights() {
 			image:
 				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/stratosphere.webp?v=1673519740927",
 			miniExplanation:
-				"Take a day trip into space. You'll see amazing views and experience zero g without the hassle of being an astronaut.",
+				"Take a day trip into space. You'll see amazing views and experience zero-g without the hassle of being an astronaut.",
 			longExplanation: "",
 			length: "Day Trip",
 			price: (1000).toLocaleString(),
@@ -110,6 +110,13 @@ export default function Flights() {
 	return (
 		<>
 			<div className="navSpacer"></div>
+			<Image
+				className={styles.backgroundImage}
+				alt="Space Background"
+				src="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/sunRise.webp?v=1674255059462"
+				width={1980}
+				height={1080}
+			/>
 			<div className="page">
 				<h1>Flights</h1>
 				<Cards cardArray={cardArray} setCardSelected={setCardSelected} />

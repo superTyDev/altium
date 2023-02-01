@@ -466,7 +466,7 @@ export default function Home() {
 							<h3>Stratosphere</h3>
 							<p>
 								Take a day trip into space. You&apos;ll see amazing views and
-								experience zero g without the hassle of being an astronaut.
+								experience zero-g without the hassle of being an astronaut.
 							</p>
 						</div>
 						<Image
@@ -482,7 +482,7 @@ export default function Home() {
 						<div className={styles.innerCard}>
 							<h3>Moon</h3>
 							<p>
-								Take a three day trip into the frontier of space. Join the ranks
+								Take a one week trip into the frontier of space. Join the ranks
 								of astronauts as you travel to the moon. Every guest has the
 								opportunity to witness the galaxy on a space walk.
 							</p>
@@ -500,7 +500,7 @@ export default function Home() {
 						<div className={styles.innerCard}>
 							<h3>ISS</h3>
 							<p>
-								Looking for an extended stay in space? Spend two weeks in this
+								Looking for an extended stay in space? Spend two days in this
 								weightless environment.
 							</p>
 						</div>
@@ -580,11 +580,12 @@ export default function Home() {
 				</p>
 				<div className="buttonCont">
 					<Link href="/ticket#dates" className="button">
-						Upcoming Dates
-					//</Link>
-					//<Link href="/ticket#next" className="button">
-					//	Book Now
-					//</Link>
+						Upcoming Dates //
+					</Link>
+					//
+					<Link href="/ticket#next" className="button">
+						// Book Now //
+					</Link>
 					<Link className="button" href="/quote">
 						Book Now
 					</Link>

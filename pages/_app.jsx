@@ -233,8 +233,11 @@ export default function App({ Component, pageProps }) {
 						<span className="slider round"></span>
 					</label>
 				</div>
+				<div className="copyright"></div>
 				<div className="copyright">
-					© Tyson McLaws, Connor Altvater, Subham Patel 2033. No Rights Reserved.
+					Customer Support: 1 800 GET SPACE (438-7723)
+					<br />© Tyson McLaws, Connor Altvater, Subham Patel 2033. No Rights
+					Reserved.
 				</div>
 				<div></div>
 			</footer>
