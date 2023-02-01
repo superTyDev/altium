@@ -12,7 +12,7 @@ import {
 	updateProfile,
 } from "firebase/auth";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
-import { app, auth } from "./fbauth.js";
+import { auth } from "./fbauth.js";
 import { db } from "./fbdata.js";
 
 // Initialize Firebase

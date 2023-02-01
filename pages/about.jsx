@@ -58,12 +58,12 @@ export default function Ships() {
 							then look no further than Altium Aeronautics!
 						</p>
 						<div className="buttonCont">
-							<a href="/flights" className="button">
+							<Link href="/flights" className="button">
 								View Flights
-							</a>
-							<a href="#ships" className="button">
+							</Link>
+							<Link href="#ships" className="button">
 								See Ships
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
