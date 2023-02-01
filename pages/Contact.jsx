@@ -13,12 +13,12 @@ export default function Contact() {
       <div className="navSpacer"></div>
       <div className="page">
         <h1>Contact</h1>
-    <ul>
+      </div>
+     <ul>
       <li>Email:  NotMyProblem@gmail.com </li>
       <li>Phone: 1 800 GET SPACE (438-7723)</li>
        <li></li>
     </ul>
-      </div>
     </>
   );
 }
