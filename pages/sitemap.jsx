@@ -14,6 +14,9 @@ export default function Sitemap() {
 					<Link href="/" className="button">
 						Home
 					</Link>
+					<Link href="/quote" className="button">
+						Buy a Ticket
+					</Link>
 					<Link href="/login" className="button">
 						Login
 					</Link>
@@ -25,6 +28,9 @@ export default function Sitemap() {
 					<h2>Other</h2>
 					<Link href="/about" className="button">
 						About
+					</Link>
+					<Link href="/Contact" className="button">
+						Contact
 					</Link>
 				</div>
 			</div>
