@@ -234,7 +234,7 @@ export default function App({ Component, pageProps }) {
 					</label>
 				</div>
 				<div className="copyright">
-					© Tyson McLaws, Connor Altvater 2033. No Rights Reserved.
+					© Tyson McLaws, Connor Altvater, Subham Patel 2033. No Rights Reserved.
 				</div>
 				<div></div>
 			</footer>
