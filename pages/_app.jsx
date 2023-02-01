@@ -218,8 +218,6 @@ export default function App({ Component, pageProps }) {
 					<Link href="/about">About</Link>
 					<Link href="/login">Login</Link>
 					<Link href="/cites">Cites</Link>
-					<Link href="/map">Map</Link>
-					<Link href="/feedback">Feedback</Link>
 					<Link href="/sitemap">Sitemap</Link>
 				</div>
 				<div className="switchContainer">
