@@ -11,7 +11,7 @@ export default function Sitemap() {
     <>
       <div className="navSpacer"></div>
       <div className="page">
-        <h1>Site map</h1>
+        <h1>Sitemap</h1>
         <h2>Main</h2>
         <Link href="/" className="button">
           Home
