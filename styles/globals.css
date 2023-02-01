@@ -220,7 +220,7 @@ nav #logo {
 }
 
 .sideNavInner,
-.sideNavInner > * {
+.sideNavInner>* {
 	display: flex;
 	width: 0;
 	box-sizing: border-box;
@@ -240,14 +240,14 @@ nav #logo {
 	max-width: 500px;
 }
 
-.sideNavInner > * {
+.sideNavInner>* {
 	background-color: var(--background);
 	box-shadow: 5px 5px 5px #00000044;
 	justify-content: space-between;
 }
 
 .sideNav.expand .sideNavInner,
-.sideNav.expand .sideNavInner > * {
+.sideNav.expand .sideNavInner>* {
 	width: 100%;
 }
 
@@ -371,6 +371,7 @@ hr {
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
+	flex-wrap: wrap
 }
 
 .page.flex .left,
@@ -524,15 +525,15 @@ footer .slider:before {
 	background-position: center;
 }
 
-footer input:checked + .slider {
+footer input:checked+.slider {
 	background-color: var(--accent);
 }
 
-footer input:focus + .slider {
+footer input:focus+.slider {
 	box-shadow: 0 0 1px var(--accent);
 }
 
-footer input:checked + .slider:before {
+footer input:checked+.slider:before {
 	-webkit-transform: translateX(30px) rotate(180deg);
 	-ms-transform: translateX(30px) rotate(180deg);
 	transform: translateX(30px) rotate(180deg);

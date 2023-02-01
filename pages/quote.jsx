@@ -61,7 +61,7 @@ function LoginStrip({ user, name, setName, email, setEmail }) {
 		return (
 			<div>
 				<div className={styles.loginDetails}>
-					<Link href="/login?redirect=/checkout">Login to Save Info</Link>
+					<Link href="/login?redirect=/quote">Login to Save Info</Link>
 				</div>
 				{/* <div className={lStyles.input__container}>
 					<i className="material-symbols-outlined">account_circle</i>
