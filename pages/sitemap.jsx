@@ -29,6 +29,9 @@ export default function Sitemap() {
 					<Link href="/about" className="button">
 						About
 					</Link>
+					<Link href="/Cite" className="button">
+						Contact
+					</Link>
 				</div>
 			</div>
 		</>
