@@ -579,9 +579,9 @@ export default function Home() {
 					<strong>February 15</strong>.
 				</p>
 				<div className="buttonCont">
-					{/* <Link href="/ticket#dates" className="button">
+					<Link href="/flights#dates" className="button">
 						Upcoming Dates
-					</Link> */}
+					</Link>
 					<Link className="button" href="/quote">
 						Book Now
 					</Link>

@@ -52,7 +52,7 @@ function LargeCard({ cardArray, cardSelected }) {
 					{/* <p>{card.longExplanation}</p> */}
 					<div className="buttonCont">
 						<Link href="/quote" className="button">
-							Buy Ticket
+							Buy a Ticket
 						</Link>
 					</div>
 				</div>
@@ -121,6 +121,24 @@ export default function Flights() {
 				<h1>Flights</h1>
 				<Cards cardArray={cardArray} setCardSelected={setCardSelected} />
 				<LargeCard cardArray={cardArray} cardSelected={cardSelected} />
+				<h2 id="dates">Upcoming Dates</h2>
+				<div className={styles.dates}>
+					<div className={styles.innerDate}>
+						<div>March 3, 2023</div>
+						<div>June 6, 2023</div>
+						<div>September 8, 2023</div>
+						<div>December 12, 2023</div>
+						<div>March 3, 2024</div>
+						<div>June 6, 2024</div>
+						<div>September 8, 2024</div>
+						<div>December 12, 2024</div>
+					</div>
+					<div className="buttonCont">
+						<Link className="button" href="/quote">
+							Book Now
+						</Link>
+					</div>
+				</div>
 			</div>
 		</>
 	);
