@@ -17,7 +17,6 @@ export default function Contact() {
      <ul>
       <li>Email:  NotMyProblem@gmail.com </li>
       <li>Phone: 1 800 GET SPACE (438-7723)</li>
-       <li></li>
     </ul>
     </>
   );
