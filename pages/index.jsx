@@ -586,10 +586,12 @@ export default function Home() {
 					//	Book Now
 					//</Link>
 					<Link href="/quote" className="button">
-						Book Now
+						View Missions
 					</Link>
 				</div>
 			</div>
 		</>
 	);
 }
+
+
