@@ -40,7 +40,7 @@ const ListFlights = ({ flights }) => {
 				<div className={styles.empty}>
 					<i className={styles.left}>rocket_launch</i>
 					<div className={styles.right}>
-						Looks like their&apos;s space,
+						Looks like there&apos;s space,
 						<br />
 						buy a ticket to fill up this area.
 					</div>
