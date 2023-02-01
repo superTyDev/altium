@@ -29,7 +29,7 @@ export default function Sitemap() {
 					<Link href="/about" className="button">
 						About
 					</Link>
-					<Link href="/Cite" className="button">
+					<Link href="/Contact" className="button">
 						Contact
 					</Link>
 				</div>
