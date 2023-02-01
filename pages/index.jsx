@@ -582,9 +582,6 @@ export default function Home() {
 					<Link href="/ticket#dates" className="button">
 						Upcoming Dates
 					</Link>
-					<Link href="/ticket#next" className="button">
-						Book Now
-					</Link>
 					<Link className="button" href="/quote">
 						Book Now
 					</Link>
