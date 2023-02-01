@@ -1,0 +1,56 @@
+{
+	"modules": {
+		"1": {
+			"name": "Packing",
+			"subTopics": ["Limits", "Recommended", "Itinerary"]
+		},
+		"2": {
+			"name": "Documents",
+			"subTopics": ["Required", "Document Protection", "Legal Agreements"]
+		},
+		"3": {
+			"name": "Pre - Launch",
+			"subTopics": ["Arrival", "Tour", "Space Suit", "Set Up"]
+		},
+		"4": {
+			"name": "Launch Safety",
+			"subTopics": ["Vehicle Operation"]
+		},
+		"5": {
+			"name": "Gravity & Fitness",
+			"subTopics": ["Forces", "Medical Physical", "Recommended Exercises"]
+		},
+		"6": {
+			"name": "Space Walks",
+			"subTopics": ["Safety", "Equipment Operation"]
+		},
+		"7": {
+			"name": "Docking",
+			"subTopics": [
+				"Equipment Operation",
+				"Legal Procedures",
+				"Failed Mount",
+				"Dis Mount"
+			]
+		},
+		"8": {
+			"name": "Landing",
+			"subTopics": [
+				"Equipment Operation",
+				"Landing Procedure",
+				"Failed Landing",
+				"Take Off Pre Checks"
+			]
+		},
+		"9": {
+			"name": "Emergency Control",
+			"subTopics": [
+				"Equipment Operation",
+				"Fire",
+				"Explosion",
+				"Mis Fire",
+				"Scrubbed Launch"
+			]
+		}
+	}
+}

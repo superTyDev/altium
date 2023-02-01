@@ -1,0 +1,14 @@
+.lessonCont {
+	display: flex;
+	height: 100%;
+	padding-top: 60px;
+}
+
+.lessonCont .lessonNav {
+	background-color: var(--input-bc);
+}
+
+.lessonBody {
+	flex: 1;
+	padding: 20px 10vw;
+}

@@ -359,6 +359,10 @@ hr {
 	flex-direction: column;
 }
 
+.content:has(.training) {
+	flex-direction: row;
+}
+
 .page {
 	padding: 20px 10vw;
 }
