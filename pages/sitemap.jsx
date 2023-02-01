@@ -12,7 +12,7 @@ export default function Sitemap() {
       <div className="navSpacer"></div>
       <div className="page">
         <h1>Site map</h1>
-        <h2>main</h2>
+        <h2>Main</h2>
         <Link href="/" className="button">
           Home
         </Link>
@@ -22,7 +22,7 @@ export default function Sitemap() {
         <Link href="/cites" className="button">
           Cites
         </Link>
-        <h2>other</h2>
+        <h2>Other</h2>
         <Link href="/about" className="button">
           About
         </Link>
