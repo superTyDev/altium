@@ -22,7 +22,7 @@ export default function Cites() {
 					</li>
 					<li>
 						Space Panorama,{" "}
-						<Link href="https://www.hdri-hub.com">HDRI Hub</Link>
+						<Link href="https://www.istockphoto.com/">I Stock Photo</Link>
 					</li>
 					<li>
 						NASA Mobile Launcher,{" "}

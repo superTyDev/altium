@@ -128,8 +128,8 @@ export default function Home() {
 						src="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/saturnv?v=1673520475101"
 						disable-zoom
 						style={{ backgroundColor: "#003464" }}
-						skybox-image="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/cubemap.webp?v=1673518418783"
-						exposure="2"
+						skybox-image="https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/spaceCubemap5.webp?v=1675300807295"
+						exposure="12"
 					>
 						<div className="progress-bar hide" slot="progress-bar">
 							<div className="update-bar"></div>

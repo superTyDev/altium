@@ -1,0 +1,26 @@
+.cardCont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    min-width: 200px;
+    background-color: #ffffff44;
+    transition: all 0.5s;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    flex: 1;
+    padding: 10px 15px;
+    max-width: 300px;
+}
+
+.card span {
+    white-space: nowrap;
+}
+
+.fullWidth {
+    width: 100%;
+    max-width: unset;
+}
