@@ -347,7 +347,7 @@
 /* launch dates, third section */
 .launch {
 	position: relative;
-	background: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/launchpad.jpg?v=1673518444150");
+	background: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/nasa_sls5.webp?v=1675294883505");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -357,6 +357,16 @@
 	color: #222222cc;
 	min-height: 50vh;
 }
+
+/* .launchBackground {
+	z-index: -1;
+	position: fixed;
+	left: 0;
+	width: 100vw;
+	right: 0;
+	top: -50%;
+	transform: translateY(0%);
+} */
 
 .launch .textCont {
 	position: relative;
@@ -379,6 +389,13 @@
 	mix-blend-mode: multiply;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+}
+
+.launch .launchText {
+	font-size: 120%;
+	margin: auto;
+	width: 50%;
+	text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .launch .buttonCont a {

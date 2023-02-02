@@ -59,7 +59,7 @@ export default function Map() {
 								"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/istockphoto-1314510269-612x612.jpg?v=1673518439305"
 							}
 							width={400}
-							heigh={400}
+							height={400}
 							alt="Full Moon Photo"
 						/>
 						<div className="spacer"></div>

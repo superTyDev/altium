@@ -9,8 +9,9 @@
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 	transition: all 0.3s ease-in-out;
 	cursor: pointer;
-	margin: 10px;
+	margin: 10px 0;
 	justify-content: center;
+	align-items: center;
 	gap: 20px;
 }
 
@@ -40,16 +41,43 @@
 	transition: all 0.5s;
 	border-radius: 5px;
 	overflow: hidden;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-between; */
 	flex: 1;
-
-	padding: 10px;
+	max-width: 300px;
 }
 
-.card:hover {
+.innerCard {
+	padding: 10px 15px;
+}
+
+.card img {
+	width: 100%;
+	background-color: white;
+	object-fit: contain;
+	margin-bottom: -5px;
+}
+
+.cardCont .card:hover {
 	background-color: #ffffff66;
 	border-radius: 10px;
+}
+
+.cardCont i {
+	padding: 10px;
+	border-radius: 50%;
+	background-color: #ffffff44;
+	aspect-ratio: 1 / 1;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardCont i:hover {
+	background-color: #ffffff66;
+}
+
+.cardCont i:active {
+	background-color: #ffffff88;
 }

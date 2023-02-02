@@ -48,6 +48,12 @@ export default function Cites() {
 							George Jenkins Staff Directory
 						</Link>
 					</li>
+					<li>
+						Nasa SLS,{" "}
+						<Link href="https://www.flickr.com/photos/nasahqphoto">
+							NASA on Flickr
+						</Link>
+					</li>
 				</ul>
 				<h2>Legal</h2>
 				<h3>License</h3>
@@ -85,13 +91,13 @@ export default function Cites() {
 				<p>
 					By purchasing a ticket you agree to not sue us no matter what. In the
 					event you are severely harmed and need medical attention one can file
-					a claim to 
+					a claim to
 					<strong>
 						<Link href="mailto: notmyproblem@gmail.com">
 							notmyproblem@gmail.com
 						</Link>
 					</strong>
-					 for a complementary gum stick. If you die we get your life insurance.
+					for a complementary gum stick. If you die we get your life insurance.
 				</p>
 				<p>
 					Any person caught being rude or making a public seen between the ages

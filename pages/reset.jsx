@@ -19,28 +19,30 @@ export default function Reset() {
 
 	return (
 		<>
-			<div className="navSpacer"></div>
-			<div className={styles.login}>
-				<div className={styles.login__container}>
-					<h1>Reset</h1>
-					<div className={styles.input__container}>
-						<i className="material-symbols-outlined">account_circle</i>
-						<input
-							type="text"
-							className={styles.login__textBox}
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-							placeholder="E-mail Address"
-						/>
-					</div>
-					<button
-						className={`${styles.login__btn} button`}
-						onClick={() => sendPasswordReset(email)}
-					>
-						Send password reset email
-					</button>
-					<div>
-						Do have an account? <Link href="/register">Register</Link> now.
+			<div className={styles.backgroundCont}>
+				<div className="navSpacer"></div>
+				<div className={styles.login}>
+					<div className={styles.login__container}>
+						<h1>Reset</h1>
+						<div className={styles.input__container}>
+							<i className="material-symbols-outlined">account_circle</i>
+							<input
+								type="text"
+								className={styles.login__textBox}
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								placeholder="E-mail Address"
+							/>
+						</div>
+						<button
+							className={`${styles.login__btn} button`}
+							onClick={() => sendPasswordReset(email)}
+						>
+							Send password reset email
+						</button>
+						<div>
+							Do have an account? <Link href="/register">Register</Link> now.
+						</div>
 					</div>
 				</div>
 			</div>

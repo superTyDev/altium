@@ -6,6 +6,7 @@ import { auth } from "./../components/fbauth.js";
 import { db } from "./../components/fblogin.js";
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "../styles/Dashboard.module.css";
 
 /**
@@ -17,23 +18,36 @@ const ListFlights = ({ flights }) => {
 	var flightCards = [];
 
 	flights.forEach((flight) => {
+		const imageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${flight.id}`;
 		flightCards.push(
 			<div className={styles.card}>
-				<h2>{flight.trip}</h2>
-				<p>
-					{flight.passengers}{" "}
-					{flight.passengers == 1 ? "Passenger" : "Passengers"}
-				</p>
-				<p>
-					Launches {new Date(flight.launchDate).toLocaleDateString()}{" "}
-					{new Date(flight.launchDate).toLocaleTimeString()}
-				</p>
+				<div className={styles.innerCard}>
+					<h2>{flight.trip}</h2>
+					<p>
+						{flight.passengers}{" "}
+						{flight.passengers == 1 ? "Passenger" : "Passengers"}
+					</p>
+					<p>
+						Launches {flight.launchDate.toDate().toLocaleDateString()}{" "}
+						{flight.launchDate.toDate().toLocaleTimeString()}
+					</p>
+				</div>
+				<Image src={imageUrl} width={150} height={150} />
 			</div>
 		);
 	});
 
 	if (flightCards.length) {
-		return <div className={styles.cardCont}>{flightCards}</div>;
+		return (
+			<div className={styles.cardCont}>
+				{flightCards}
+				<Link href="/quote">
+					<i className={styles.buyMore} title="Buy a Ticket">
+						add
+					</i>
+				</Link>
+			</div>
+		);
 	} else {
 		return (
 			<div className={styles.cardCont}>

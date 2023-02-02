@@ -430,7 +430,7 @@ export default function Home() {
 							to prepare you for space.
 						</p>
 						<div className="buttonCont">
-							<Link href="/train" className="button">
+							<Link href="/training" className="button">
 								Preview Training
 							</Link>
 							<Link href="#steps4" className="buttonNext">
@@ -448,10 +448,10 @@ export default function Home() {
 							in space.
 						</p>
 						<div className="buttonCont">
-							<Link href="/quote" className="button">
+							<Link href="/flights" className="button">
 								View Tickets
 							</Link>
-							<Link href="/quote" className="buttonNext">
+							<Link href="/flights" className="buttonNext">
 								&rarr;
 							</Link>
 						</div>
@@ -569,15 +569,27 @@ export default function Home() {
 				</div>
 			</div>
 			<div className={styles.launch}>
+				{/* <Image
+					src={
+						"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/nasa_sls5.webp?v=1675295293375"
+					}
+					width={1920}
+					height={2160}
+					alt="Space Launch System"
+					className={styles.launchBackground}
+				/> */}
 				<div className={styles.textCont}>
 					<h2 className={styles.text}>Launch Dates</h2>
 				</div>
 
-				<h3>Next Date: March 15</h3>
-				<p>
-					Buy your ticket before our next launch date! Tickets close{" "}
-					<strong>February 15</strong>.
-				</p>
+				<div className={styles.launchText}>
+					<h3>Next Date: March 15</h3>
+					<p>
+						Buy your ticket before our next launch date!
+						<br />
+						Tickets close <strong>February 15</strong>.
+					</p>
+				</div>
 				<div className="buttonCont">
 					<Link href="/flights#dates" className="button">
 						Upcoming Dates
