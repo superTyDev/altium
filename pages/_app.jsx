@@ -179,7 +179,7 @@ export default function App({ Component, pageProps }) {
 						</Link>
 					</div>
 					<div>
-						<Link href="/contact" onClick={closeNavLink}>
+						<Link href="/Contact" onClick={closeNavLink}>
 							Contact<i>call</i>
 						</Link>
 					</div>
