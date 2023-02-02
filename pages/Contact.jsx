@@ -15,11 +15,8 @@ export default function Contact() {
         <h1>Contact</h1>
       </div>
     <div className="left">
-      <p>For further information please contact us with any questions.</p>
-       <ul>
-        <li>Email:  NotMyProblem@gmail.com </li>
-        <li>Phone: 1 800 GET SPACE (438-7723)</li>
-      </ul>
+      <p>For further information please contact us with any questions.For anything involving lugage or carry ons please contact us at 1 800 GET SPACE (438-7723) 
+  or email us at  NotMyProblem@gmail.com. Any issues involving booking or refunds please contact us at 1 800 GET SPACE (438-7723), or email us at altiumaero@gmail.com.</p>
     </div>
     </>
   );
