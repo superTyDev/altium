@@ -125,8 +125,8 @@ export default function Contact({ errors, setErrors }) {
 								Submit
 							</button>
 							<p>
-								By submitting you agree to release your words for Altium's use.
-								See <Link href="/cites">Terms of Use</Link> for more
+								By submitting you agree to release your words for Altium&apos;s
+								use. See <Link href="/cites">Terms of Use</Link> for more
 								information. By entering an optional email address you agree to
 								recieve at max one email from Altium unless you agree further in
 								subsequent conversation.
