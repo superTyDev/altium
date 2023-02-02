@@ -20,8 +20,8 @@ export default function Sitemap() {
 					<Link href="/login" className="button">
 						Login
 					</Link>
-					<Link href="/cites" className="button">
-						Cites
+					<Link href="/flights" className="button">
+						Flights
 					</Link>
 				</div>
 				<div className="right">
@@ -31,6 +31,9 @@ export default function Sitemap() {
 					</Link>
 					<Link href="/Contact" className="button">
 						Contact
+					</Link>
+					<Link href="/cites" className="button">
+						Cites
 					</Link>
 				</div>
 			</div>
