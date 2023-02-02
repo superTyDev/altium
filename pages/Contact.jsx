@@ -14,11 +14,13 @@ export default function Contact() {
       <div className="page">
         <h1>Contact</h1>
       </div>
-    <p>For further information please contact us with any questions.</p>
-     <ul>
-      <li>Email:  NotMyProblem@gmail.com </li>
-      <li>Phone: 1 800 GET SPACE (438-7723)</li>
-    </ul>
+    <div className="left">
+      <p>For further information please contact us with any questions.</p>
+       <ul>
+        <li>Email:  NotMyProblem@gmail.com </li>
+        <li>Phone: 1 800 GET SPACE (438-7723)</li>
+      </ul>
+    </div>
     </>
   );
 }
