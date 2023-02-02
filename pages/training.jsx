@@ -1,9 +1,16 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 
 // import styles from "/styles/Training.module.css";
 
 export default function Training() {
+	const router = useRouter();
+
+	useEffect(() => {
+		router.push("/training/0");
+	}, [router]);
+
 	return (
 		<>
 			<div className="navSpacer"></div>

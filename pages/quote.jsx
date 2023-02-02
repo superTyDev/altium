@@ -605,14 +605,14 @@ export default function Quote({ errors, setErrors }) {
 								className={lStyles.login__textBox}
 								value={ccFormat(cc.ccnum || "")}
 								onChange={(e) => setCC({ ...cc, ccnum: e.target.value })}
-								placeholder="Credit Card"
+								placeholder="Credit Card (16 Digits)"
 							/>
 							<input
 								type="number"
 								className={`${lStyles.login__textBox} ${styles.securityCode}`}
 								value={cc.cvv}
 								onChange={(e) => setCC({ ...cc, cvv: e.target.value })}
-								placeholder="CVV"
+								placeholder="CVV (3-4 Digits)"
 							/>
 						</div>
 						<div className={lStyles.input__container}>

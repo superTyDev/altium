@@ -11,7 +11,12 @@ function Cards({ cardArray, setCardSelected }) {
 		cards.push(
 			<div className={styles.card} onClick={(e) => setCardSelected(index)}>
 				<div className={styles.innerCard}>
-					<h3>{element.title}</h3>
+					<h3>
+						{element.title}
+						<span>
+							Expand <i>arrow_forward_ios</i>
+						</span>
+					</h3>
 					{/* <p>{element.mini    Explanation}</p> */}
 				</div>
 				<Image

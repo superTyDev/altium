@@ -179,6 +179,11 @@ export default function App({ Component, pageProps }) {
 						</Link>
 					</div>
 					<div>
+						<Link href="/about#ships" onClick={closeNavLink}>
+							Our Ships<i>rocket</i>
+						</Link>
+					</div>
+					<div>
 						<Link href="/Contact" onClick={closeNavLink}>
 							Contact<i>call</i>
 						</Link>

@@ -42,20 +42,27 @@
 	position: relative;
 }
 
-.card h3:after {
+.card h3 span {
 	position: absolute;
+	top: -5px;
 	right: 10px;
-	content: ">";
-	padding: 0px 5px;
+	/* content: ">"; */
+	padding: 5px;
 	border-radius: 5px;
 }
 
-.card h3:hover:after {
+.card h3 span i {
+	font-size: 100%;
+	position: relative;
+	top: 2px;
+}
+
+.card h3 span:hover {
 	background-color: var(--hover-color);
 }
 
 .card:hover {
-	background-color: #ffffffaa;
+	background-color: #ffffffbb;
 	border-radius: 10px;
 }
 

@@ -62,11 +62,13 @@ export default function Page() {
 
 	const router = useRouter();
 	const { page } = router.query;
+	// const [module, setModule] = React.useState(0);
 
 	const { data, error } = useSWR("/api/staticdata", fetcher);
 
 	return (
 		<>
+			{page}
 			<div className={`${styles.lessonCont} training`}>
 				<div className={styles.lessonNav}>
 					<ModuleCollapsible data={data} />
@@ -74,6 +76,24 @@ export default function Page() {
 				<div className={styles.lessonBody}>
 					{error && <div>Failed to Load.</div>}
 					{!data && <div>Loading</div>}
+					{page === 0 && (
+						<>
+							<h1>Training</h1>
+							<p>
+								Get easy access to training material. Our two week course
+								provides you with all the information you&apos;ll need to safely
+								travel to space.
+							</p>
+							<div className="buttonCont">
+								<Link className="button" href="/training/1">
+									View Sample Lesson
+								</Link>
+								<Link className="button" href="/quote">
+									Buy a Ticket
+								</Link>
+							</div>
+						</>
+					)}
 				</div>
 			</div>
 		</>
