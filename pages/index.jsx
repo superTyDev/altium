@@ -186,7 +186,6 @@ export default function Home() {
 					<div className={styles.stepsShips}>
 						<div className={styles.text}>
 							<h3>Select a Craft</h3>
-							{/* <p></p> */}
 						</div>
 
 						<div>
@@ -356,7 +355,6 @@ export default function Home() {
 								Next Step
 							</Link>
 						</div>
-						{/* <Image src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/astrosuit.svg?v=1670892262011" alt="Space Suit" height="400px" /> */}
 					</ScrollShow>
 				</div>
 				<div id="steps2">
@@ -370,9 +368,7 @@ export default function Home() {
 							<Link href="/quote" className="button">
 								Purchase Ticket
 							</Link>
-							{/* <Link href="/flights" className="button">
-								View Missions
-							</Link> */}
+
 							<Link href="#steps3" className="button">
 								Next Step
 							</Link>
@@ -408,9 +404,7 @@ export default function Home() {
 							<Link href="/flights" className="button">
 								View Flights
 							</Link>
-							{/* <Link href="/flights" className="buttonNext">
-								&rarr;
-							</Link> */}
+
 							<Link href="/flights" className="buttonNext">
 								<i>arrow_forward</i>
 							</Link>
@@ -529,15 +523,6 @@ export default function Home() {
 				</div>
 			</div>
 			<div className={styles.launch}>
-				{/* <Image
-					src={
-						"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/nasa_sls5.webp?v=1675295293375"
-					}
-					width={1920}
-					height={2160}
-					alt="Space Launch System"
-					className={styles.launchBackground}
-				/> */}
 				<div className={styles.textCont}>
 					<h2 className={styles.text}>Launch Dates</h2>
 				</div>

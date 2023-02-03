@@ -60,7 +60,6 @@ function LargeCard({ cardArray, cardSelected }) {
 					<p>Length: {card.length}</p>
 					<p>Price: ${card.price}</p>
 					<p>{card.miniExplanation}</p>
-					{/* <p>{card.longExplanation}</p> */}
 					<div className="buttonCont">
 						<Link href="/quote" className="button">
 							Buy a Ticket

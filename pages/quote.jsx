@@ -63,17 +63,7 @@ function LoginStrip({ user, name, setName, email, setEmail }) {
 				<div className={styles.loginDetails}>
 					<Link href="/login?redirect=/quote">Login to Save Info</Link>
 				</div>
-				{/* <div className={lStyles.input__container}>
-					<i className="material-symbols-outlined">account_circle</i>
-					<input
-						type="text"
-						className={lStyles.login__textBox}
-						value={name}
-						onChange={(e) => setName(e.target.value)}
-						placeholder="Full Name"
-						key={"nonLogin_nameInput"}
-					/>
-				</div> */}
+
 				<div className={lStyles.input__container}>
 					<i className="material-symbols-outlined">mail</i>
 					<input

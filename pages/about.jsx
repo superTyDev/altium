@@ -11,15 +11,6 @@ export default function Ships() {
 			<div>
 				<div className={styles.hero}>
 					<div className="navSpacer"></div>
-					{/* <Image
-						className={styles.backgroundImg}
-						src={
-							"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/sunRise.webp?v=1674255059462"
-						}
-						width={1980}
-						height={500}
-						alt="Sun Rise over Earth from Space"
-					/> */}
 					<h1>About</h1>
 				</div>
 				<div className={styles.section}>

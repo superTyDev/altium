@@ -129,6 +129,11 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<title>Altium Aeronautics</title>
 				<meta property="og:title" content="Altium Aeronautics" key="title" />
+				<meta charset="UTF-8" />
+				<meta name="description" content="Space flight for everyone." />
+				<meta name="keywords" content="Altium, space" />
+				<meta name="author" content="Tyson McLaws & Connor Altvater" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			</Head>
 			<nav>
 				<Link href="/" id="logo">
@@ -196,16 +201,6 @@ export default function App({ Component, pageProps }) {
 					<div>
 						<NavLoginButton onClick={closeNavLink} icon_name={true} />
 					</div>
-					{/* <div>
-						<Link href="/login" onClick={closeNavLink}>
-							Login <i>account_circle</i>
-						</Link>
-					</div>
-					<div>
-						<Link href="/dashboard" onClick={closeNavLink}>
-							Dashboard <i>dashboard</i>
-						</Link>
-					</div> */}
 					<div>
 						<NavLogoutButton />
 					</div>
