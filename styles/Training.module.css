@@ -1,14 +1,55 @@
 .lessonCont {
 	display: flex;
-	height: 100%;
 	padding-top: 60px;
 }
 
 .lessonCont .lessonNav {
 	background-color: var(--input-bc);
+	display: flex;
+	flex-direction: column;
+	height: calc(100vh - 272px);
+	box-sizing: border-box;
+	overflow-y: auto;
+}
+
+.collapCont {
+	padding: 0;
+}
+
+.lessonNav button {
+	font-size: 100%;
+}
+
+.lessonNav a {
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+
+.lessonNav ul {
+	padding-left: 0;
+	margin: 0;
+}
+
+.lessonNav li {
+	padding: 0 5px;
+	transition: all 0.5s;
+	background-color: #ffffff44;
+	list-style: none;
+}
+
+.lessonNav li.active {
+	border-bottom: 2px solid var(--accent);
+	border-top: 2px solid var(--accent);
+}
+
+.lessonNav li:hover {
+	background-color: #ffffff66;
 }
 
 .lessonBody {
 	flex: 1;
 	padding: 20px 10vw;
+	height: calc(100vh - 312px);
+	overflow-y: auto;
 }

@@ -54,7 +54,32 @@ export default function Cites() {
 							NASA on Flickr
 						</Link>
 					</li>
+					<li>
+						Lockheed SR-71B 3 View,{" "}
+						<Link href="https://commons.wikimedia.org/wiki/File:Lockheed_SR-71A_3view.svg">
+							United States Air Force, Public domain, via Wikimedia Commons
+						</Link>
+					</li>
+					<li>
+						Saturn V Rocket,{" "}
+						<Link href="https://commons.wikimedia.org/wiki/File:RP1357_p174_Saturn_V.svg">
+							David S. F. Portree / NASA, Public domain, via Wikimedia Commons
+						</Link>
+					</li>
+					<li>
+						Other Random SVGs,{" "}
+						<Link href="https://www.svgrepo.com/">SVG Repo</Link>
+					</li>
 				</ul>
+				<h2>Copyright Checklist</h2>
+				<iframe
+					src="copyrightChecklist.pdf"
+					width="100%"
+					height="500px"
+				></iframe>
+				<Link href="copyrightChecklist.pdf" target="_blank">
+					View Copyright Checklist in New Tab
+				</Link>
 				<h2>Legal</h2>
 				<h3>License</h3>
 				<p>

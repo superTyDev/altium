@@ -10,6 +10,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function collapse() {
 	var coll = document.getElementsByClassName("collapsible");
+	console.log(coll);
 	if (coll) {
 		for (var i = 0; i < coll.length; i++) {
 			coll[i].onclick = function () {
@@ -27,25 +28,43 @@ function collapse() {
 
 function ModuleCollapsible({ data }) {
 	if (data) {
-		const tempData = JSON.parse(data);
 		var collapsible = [];
-		console.log(tempData);
-		console.log(`modules: ${tempData.modules}`);
+
+		const tempData = JSON.parse(data);
 		Object.keys(tempData.modules).forEach((key, index) => {
 			const lesson = tempData.modules[key];
+			const subTopics = lesson.subTopics;
+
+			// console.log(lesson.subTopics);
 			collapsible.push(
-				<>
-					<button type="button" className="collapsible">
-						{index}: {lesson.name}
+				<div key={index}>
+					<button
+						type="button"
+						className={"collapsible"}
+						href={`/training/${index + 1}`}
+					>
+						{index + 1}: {lesson.name}
 					</button>
-					<div className="collapCont">
+					<div className={`collapCont ${styles.collapCont}`}>
 						<ul>
-							<li>{lesson.subTopics}</li>
+							{lesson.subTopics.map((subTopic, subIndex) => (
+								<li key={(index + 1) * (subIndex + 1)}>
+									<Link href={`/training/${index + 1}/${subIndex + 1}`}>
+										{subTopic}
+									</Link>
+								</li>
+							))}
 						</ul>
 					</div>
-				</>
+				</div>
 			);
 		});
+		return (
+			<>
+				{collapsible}
+				{collapse()}
+			</>
+		);
 	} else {
 		return <p>No Module</p>;
 	}
@@ -58,7 +77,7 @@ function onPageLoad() {
 export default function Page() {
 	useEffect(() => {
 		onPageLoad();
-	}, []);
+	}, [ModuleCollapsible]);
 
 	const router = useRouter();
 	const { page } = router.query;
@@ -68,21 +87,57 @@ export default function Page() {
 
 	return (
 		<>
-			{page}
 			<div className={`${styles.lessonCont} training`}>
 				<div className={styles.lessonNav}>
-					<ModuleCollapsible data={data} />
+					<ModuleCollapsible data={data} onMount={collapse} />
 				</div>
 				<div className={styles.lessonBody}>
 					{error && <div>Failed to Load.</div>}
 					{!data && <div>Loading</div>}
-					{page === 0 && (
+					{parseInt(page) === 0 && (
 						<>
 							<h1>Training</h1>
 							<p>
 								Get easy access to training material. Our two week course
 								provides you with all the information you&apos;ll need to safely
 								travel to space.
+							</p>
+							<div className="buttonCont">
+								<Link className="button" href="/training/1">
+									View Sample Lesson
+								</Link>
+								<Link className="button" href="/quote">
+									Buy a Ticket
+								</Link>
+							</div>
+						</>
+					)}
+					{parseInt(page) === 1 && (
+						<>
+							<h1>Training</h1>
+							<p>
+								Get easy access to training material. Our two week course
+								provides you with all the information you&apos;ll need to safely
+								travel to space.
+							</p>
+							<div className="buttonCont">
+								<Link className="button" href="/training/1">
+									View Sample Lesson
+								</Link>
+								<Link className="button" href="/quote">
+									Buy a Ticket
+								</Link>
+							</div>
+						</>
+					)}
+					{parseInt(page) > 1 && (
+						<>
+							<h1>Access Denied</h1>
+							<p>
+								Please sign up to view the rest of the training material.
+								<br />
+								If you are signed up, please login. If you have any questions,
+								please reach out.
 							</p>
 							<div className="buttonCont">
 								<Link className="button" href="/training/1">

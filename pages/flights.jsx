@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import React, { useState } from "react";
+import { useRouter } from "next/router";
+
+import React, { useEffect, useState } from "react";
 
 import styles from "../styles/Flights.module.css";
 
@@ -9,7 +11,11 @@ function Cards({ cardArray, setCardSelected }) {
 
 	cardArray.forEach((element, index) => {
 		cards.push(
-			<div className={styles.card} onClick={(e) => setCardSelected(index)}>
+			<div
+				className={styles.card}
+				onClick={(e) => setCardSelected(index)}
+				key={index}
+			>
 				<div className={styles.innerCard}>
 					<h3>
 						{element.title}
@@ -74,6 +80,7 @@ function LargeCard({ cardArray, cardSelected }) {
 }
 
 export default function Flights() {
+	const router = useRouter();
 	const [cardSelected, setCardSelected] = useState(-1);
 
 	var cardArray = [
@@ -111,6 +118,17 @@ export default function Flights() {
 			price: (1000).toLocaleString(),
 		},
 	];
+
+	useEffect(() => {
+		const toSelectCard = router.asPath.split("#")[1];
+		console.log("toSelectCard: " + toSelectCard);
+		console.log("keys: " + Object.keys(cardArray));
+
+		if (parseInt(toSelectCard) in Object.keys(cardArray)) {
+			setCardSelected(toSelectCard);
+			console.log("found it");
+		}
+	}, [router]);
 
 	return (
 		<>

@@ -1,3 +1,14 @@
+.lazy-div {
+	/* height: 50vh; */
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	margin: 20px;
+	padding: 20px;
+	font-size: 1.5em;
+}
+
 /* Hero (giant background) */
 .hero {
 	height: 100vh;
@@ -209,7 +220,32 @@
 }
 
 /* Steps Animation */
-.steps {
+.preSteps {
+	min-height: 30vh !important;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	z-index: 0;
+}
+
+.stepsHero {
+	display: flex;
+	min-height: 30vh !important;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.preSteps h2 {
+	font-size: min(4vw, 60px);
+	margin-block-start: 0.5em;
+	margin-block-end: 0.1em;
+}
+
+.steps,
+.preSteps {
 	background-image: url("https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/planetSky.webp?v=1673522201183");
 
 	min-height: 500px;
@@ -225,6 +261,62 @@
 	color: #ddd;
 }
 
+.stepsShips {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+	/* width: 100vw; */
+	/* width: 100%; */
+	padding: 20px 12vw;
+	flex-wrap: wrap;
+}
+
+.stepsShips div {
+	flex: 1;
+}
+
+.stepsShips .bigCenterCont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.stepsShips .text,
+.stepsShips .buttonCont {
+	flex: none;
+	width: 100%;
+	text-align: center;
+}
+
+.stepsShips img {
+	stroke: white;
+	filter: opacity(0.8);
+	transition: .5s all;
+	width: 100%;
+}
+
+.stepsShips img:hover,
+.stepsShips img:hover+p {
+	filter: opacity(1.1);
+	-webkit-filter: drop-shadow(0 0 8px white);
+	filter: drop-shadow(0 0 8px white);
+	filter: drop-shadow(0 0 0 8px white);
+}
+
+.stepsShips p {
+	text-align: center;
+}
+
+.stepsShips .bigCenter {
+	width: 70%;
+}
+
+.stepsShips .bigCenter.center {
+	width: 160%;
+}
+
 .steps>div {
 	height: 80vh;
 	display: flex;
@@ -234,21 +326,10 @@
 	z-index: 0;
 }
 
-.steps div:nth-child(2n) {
+.steps>div:nth-child(2n),
+.preSteps>div:nth-child(2n) {
 	background-color: #00000033;
 	background: linear-gradient(to right, transparent, #00000033);
-}
-
-.stepsHero {
-	height: 30vh !important;
-	display: flex;
-	align-items: center;
-}
-
-.stepsHero>h2 {
-	font-size: min(4vw, 60px);
-	margin-block-start: 0.5em;
-	margin-block-end: 0.1em;
 }
 
 .steps .text {
@@ -283,6 +364,16 @@
 	stroke-dasharray: 1;
 	stroke-dashoffset: 1;
 	pointer-events: none;
+}
+
+.steps .svgStart {
+	position: absolute;
+	filter: blur(3px) opacity(0.8);
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 40px;
+	height: 40px;
 }
 
 /* packing, second section */
@@ -439,5 +530,9 @@
 	.steps .text {
 		width: 70%;
 		padding: 15%;
+	}
+
+	.stepsShips {
+		flex-direction: column;
 	}
 }

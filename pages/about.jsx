@@ -72,7 +72,7 @@ export default function Ships() {
 				</div>
 
 				<div className={styles.backgroundSection}>
-					<div className={styles.section}>
+					<div className={styles.section} id="Darkhawk">
 						<Carousel
 							className={styles.sectionImage}
 							autoPlay
@@ -121,7 +121,7 @@ export default function Ships() {
 						</div>
 					</div>
 
-					<div className={styles.section}>
+					<div className={styles.section} id="Gibraltar">
 						<Carousel
 							className={styles.sectionImage}
 							autoPlay
@@ -172,7 +172,7 @@ export default function Ships() {
 						</div>
 					</div>
 
-					<div className={styles.section}>
+					<div className={styles.section} id="Malta">
 						<Carousel
 							className={styles.sectionImage}
 							autoPlay
