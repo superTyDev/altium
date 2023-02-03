@@ -487,13 +487,13 @@ export default function Home() {
 
 				<h2>The Packing List</h2>
 				<p>
-					Too soon to start packing? We do think so. Space travel does have to
-					be complicated. Our space-ready course can be completed in{" "}
+					Too soon to start packing? We don&apos;t think so. Space travel does
+					have to be complicated. Our space-ready course can be completed in{" "}
 					<strong>2</strong> weeks, it&apos;s that simple.
 				</p>
 				<p>
-					For any of our flights clients will take an brief online class
-					followed by standard fitness testing.
+					For any of our flights, clients will take an brief online class
+					followed by a medical physical.
 				</p>
 
 				<div className="buttonCont">
