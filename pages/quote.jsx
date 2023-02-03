@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
+import { addDoc, collection, Timestamp } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
 import { db } from "./../components/fbdata.js";
-import { doc, setDoc, addDoc, collection, Timestamp } from "firebase/firestore";
 
-import styles from "../styles/Quote.module.css";
-import lStyles from "../styles/Login.module.css";
 import { useRouter } from "next/router";
+import lStyles from "../styles/Login.module.css";
+import styles from "../styles/Quote.module.css";
 
 function collapse() {
 	var coll = document.getElementsByClassName("collapsible");

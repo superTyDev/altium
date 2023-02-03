@@ -5,7 +5,7 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300..700"
+					href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300..700&display=swap"
 					rel="stylesheet"
 				/>
 			</Head>

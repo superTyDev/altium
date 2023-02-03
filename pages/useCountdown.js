@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 
 const useCountdown = (targetDate) => {
 	// set the days, hours, minutes and seconds to date

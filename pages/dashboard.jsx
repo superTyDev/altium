@@ -5,8 +5,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
 import { db } from "./../components/fblogin.js";
 
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Dashboard.module.css";
 
 /**
@@ -17,10 +17,11 @@ import styles from "../styles/Dashboard.module.css";
 const ListFlights = ({ flights }) => {
 	var flightCards = [];
 
-	flights.forEach((flight) => {
-		const imageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${flight.id}`;
+	flights.forEach((flightDoc, index) => {
+		const flight = flightDoc.data();
+		const imageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=altium:${flightDoc.id}`;
 		flightCards.push(
-			<div className={styles.card}>
+			<div className={styles.card} key={index}>
 				<div className={styles.innerCard}>
 					<h2>{flight.trip}</h2>
 					<p>
@@ -32,7 +33,7 @@ const ListFlights = ({ flights }) => {
 						{flight.launchDate.toDate().toLocaleTimeString()}
 					</p>
 				</div>
-				<Image src={imageUrl} width={150} height={150} />
+				<Image src={imageUrl} width={150} height={150} alt={""} />
 			</div>
 		);
 	});
@@ -77,8 +78,9 @@ const getFlights = async ({ setFlights, user }) => {
 
 	const flightDocs = await getDocs(q);
 	console.log(flightDocs.docs);
-	const flightData = flightDocs.docs.map((doc) => doc.data());
-	setFlights(flightData);
+	// const flightData = flightDocs.docs.map((doc) => doc.data());
+
+	setFlights(flightDocs.docs);
 };
 
 export default function Dashboard() {
@@ -90,8 +92,6 @@ export default function Dashboard() {
 		if (!user) {
 			router.push("/login");
 		} else {
-			console.log("hello");
-
 			getFlights({ setFlights, user });
 		}
 	}, [user, router]);

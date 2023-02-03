@@ -1,8 +1,8 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 import styles from "../styles/Flights.module.css";
 
@@ -83,52 +83,51 @@ export default function Flights() {
 	const router = useRouter();
 	const [cardSelected, setCardSelected] = useState(-1);
 
-	var cardArray = [
-		{
-			title: "Moon",
-			imageAlt: "Full Moon",
-			image:
-				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon-labyr-nth-deviantart-0.png?v=1673519854551",
-			miniExplanation:
-				"Take a trip into the frontier of space. Join the ranks of astronauts as you travel to the moon. Every guest has the opportunity to witness the galaxy on a space walk.",
-			length: "1 Week",
-			price: (7000).toLocaleString(),
-			longExplanation: "",
-		},
-		{
-			title: "ISS",
-			imageAlt: "International Space Station in Front of the Earth",
-			image:
-				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930",
-			miniExplanation:
-				"Looking for an extended stay in space? Spend two days in this weightless environment.",
-			longExplanation: "",
-			length: "3 Days",
-			price: (3000).toLocaleString(),
-		},
-		{
-			title: "Stratosphere",
-			imageAlt: "Earth's Stratosphere",
-			image:
-				"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/stratosphere.webp?v=1673519740927",
-			miniExplanation:
-				"Take a day trip into space. You'll see amazing views and experience zero-g without the hassle of being an astronaut.",
-			longExplanation: "",
-			length: "Day Trip",
-			price: (1000).toLocaleString(),
-		},
-	];
+	const cardArray = useMemo(() => {
+		return [
+			{
+				title: "Moon",
+				imageAlt: "Full Moon",
+				image:
+					"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/moon-labyr-nth-deviantart-0.png?v=1673519854551",
+				miniExplanation:
+					"Take a trip into the frontier of space. Join the ranks of astronauts as you travel to the moon. Every guest has the opportunity to witness the galaxy on a space walk.",
+				length: "1 Week",
+				price: (7000).toLocaleString(),
+				longExplanation: "",
+			},
+			{
+				title: "ISS",
+				imageAlt: "International Space Station in Front of the Earth",
+				image:
+					"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/final_configuration_of_iss.jpg?v=1673519859930",
+				miniExplanation:
+					"Looking for an extended stay in space? Spend two days in this weightless environment.",
+				longExplanation: "",
+				length: "3 Days",
+				price: (3000).toLocaleString(),
+			},
+			{
+				title: "Stratosphere",
+				imageAlt: "Earth's Stratosphere",
+				image:
+					"https://cdn.glitch.global/d7070554-ac67-4c73-a3d6-aadfe190dab5/stratosphere.webp?v=1673519740927",
+				miniExplanation:
+					"Take a day trip into space. You'll see amazing views and experience zero-g without the hassle of being an astronaut.",
+				longExplanation: "",
+				length: "Day Trip",
+				price: (1000).toLocaleString(),
+			},
+		];
+	}, []);
 
 	useEffect(() => {
 		const toSelectCard = router.asPath.split("#")[1];
-		console.log("toSelectCard: " + toSelectCard);
-		console.log("keys: " + Object.keys(cardArray));
 
 		if (parseInt(toSelectCard) in Object.keys(cardArray)) {
 			setCardSelected(toSelectCard);
-			console.log("found it");
 		}
-	}, [router]);
+	}, [router, cardArray]);
 
 	return (
 		<>

@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import CountdownTimer from "./useCountdown";
 import styles from "../styles/Index.module.css";
+import CountdownTimer from "./useCountdown";
 
 function rotateRocket(evt) {
 	var rocket = document.querySelector("#model");
@@ -299,7 +299,7 @@ export default function Home() {
 								Discover the {mission[0]}
 							</Link>
 							<div className={styles.text}>
-								Or, <Link href={`/about#${ship}`}>Learn About {ship}</Link>, The
+								Or, <Link href={`/about#${ship}`}>Learn About {ship}</Link>, the
 								ship that will take you there
 							</div>
 						</div>
@@ -349,7 +349,7 @@ export default function Home() {
 							</div>
 						</div>
 						<div className="buttonCont">
-							<Link href="/quote#consult" className="button">
+							<Link href="/contact" className="button">
 								Schedule Consultation
 							</Link>
 							<Link href="#steps2" className="button">
@@ -367,9 +367,12 @@ export default function Home() {
 							destinations: stratosphere, ISS, and the moon quarterly.
 						</p>
 						<div className="buttonCont">
-							<Link href="/quote#missions" className="button">
-								View Missions
+							<Link href="/quote" className="button">
+								Purchase Ticket
 							</Link>
+							{/* <Link href="/flights" className="button">
+								View Missions
+							</Link> */}
 							<Link href="#steps3" className="button">
 								Next Step
 							</Link>
@@ -384,7 +387,7 @@ export default function Home() {
 							to prepare you for space.
 						</p>
 						<div className="buttonCont">
-							<Link href="/training" className="button">
+							<Link href="/training/0" className="button">
 								Preview Training
 							</Link>
 							<Link href="#steps4" className="button">
@@ -494,7 +497,7 @@ export default function Home() {
 				</p>
 
 				<div className="buttonCont">
-					<Link href="/training" className="button">
+					<Link href="/training/0" className="button">
 						View Course
 					</Link>
 				</div>
