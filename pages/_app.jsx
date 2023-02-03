@@ -71,6 +71,7 @@ function onPageLoad() {
 export default function App({ Component, pageProps }) {
 	const [user, loading, error] = useAuthState(auth);
 	const [errors, setErrors] = useState([]); // { cont: [message], type: [name of Material UI icon], time: Date.now() }
+	const [citesPopupStyles, setCitesPopupStyles] = useState({});
 
 	useEffect(() => {
 		window.addEventListener("scroll", darkNav);
@@ -214,6 +215,20 @@ export default function App({ Component, pageProps }) {
 				{/* Router specifies which component to insert here as the main content */}
 				<Component {...pageProps} errors={errors} setErrors={setErrors} />
 				<ErrorMessage />
+				<div className="citesPopup" style={citesPopupStyles}>
+					<div className="text">
+						<strong>Judges:</strong> View notebook, cites, and copyright
+						checklist at <Link href="/cites">/cites</Link>.
+					</div>
+					<div
+						className="close"
+						onClick={(e) => {
+							setCitesPopupStyles({ transform: "translateY(100vh)" });
+						}}
+					>
+						<i>close</i>
+					</div>
+				</div>
 			</div>
 			{/* Footer links to Home and About, Link elements matched in router.jsx */}
 			<footer className="footer">

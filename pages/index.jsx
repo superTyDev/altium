@@ -51,15 +51,6 @@ function carousel() {
 	// setInterval(carousel, 2000); // Change image every 2 seconds
 }
 
-// function copyCarousel() {
-// 	console.log("hello!!!");
-// 	var original = document.querySelector(".scrollCarousel");
-// 	original.classList.remove("pause");
-// 	var clone = original.cloneNode(true);
-// 	clone.classList.add("secondary");
-// 	original.after(clone);
-// }
-
 function svgAnimation() {
 	var triangle = document.querySelector("path");
 	var stepCont = document.querySelector("#stepCont");
@@ -74,13 +65,6 @@ function svgAnimation() {
 				(document.documentElement.scrollHeight -
 					document.documentElement.clientHeight);
 
-			// console.log(
-			//   (-stepCont.getBoundingClientRect().top +
-			//     document.documentElement.clientHeight) /
-			//     stepContHeight
-			// );
-
-			// triangle.style.strokeDashoffset = 1 - scrollpercent;
 			triangle.style.strokeDashoffset =
 				1.05 -
 				(-stepCont?.getBoundingClientRect().top +

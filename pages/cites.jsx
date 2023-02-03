@@ -71,6 +71,23 @@ export default function Cites() {
 						<Link href="https://www.svgrepo.com/">SVG Repo</Link>
 					</li>
 				</ul>
+				<h2>Dev Journey</h2>
+				<Link href="https://docs.google.com/document/d/11LtJvW9aZJ2__on8zBuYxzUkE73G3TwpArdAp0vSD_A/edit?usp=sharing">
+					Engineering Notebook
+				</Link>
+				<br />
+				<Link href="https://github.com/superTyDev/altium">
+					GitHub Repo: superTyDev/altium
+				</Link>
+				<p>
+					When we started planning the website we wanted something that used a
+					fast, modern framework. We started with Vite and Handlebars for the
+					template system and quickly grew beyond those tools. Soon, we upgraded
+					to React. We really liked the react system and loved the tools. We got
+					into some server side functions and even implemented a login system!
+					Despite the rich features, the speed was poor. Much later we migrated
+					to NextJS and their optimization features.
+				</p>
 				<h2>Copyright Checklist</h2>
 				<iframe
 					src="copyrightChecklist.pdf"
