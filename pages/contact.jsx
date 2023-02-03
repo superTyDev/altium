@@ -88,7 +88,7 @@ export default function Contact({ errors, setErrors }) {
 					<div className={`${styles.card} ${styles.fullWidth}`}>
 						<p>
 							For further information please contact us with any questions. For
-							anything involving luggage or carry ons please contact us at{" "}
+							anything involving luggage or carry-ons please contact us at{" "}
 							<span>1 800 GET SPACE (438-7723)</span>, or email us at
 							NotMyProblem@gmail.com. Any issues involving booking or refunds
 							please contact us at <span>1 800 GET SPACE (438-7723)</span>, or
