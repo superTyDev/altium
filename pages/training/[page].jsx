@@ -103,8 +103,11 @@ export default function Page() {
 								travel to space.
 							</p>
 							<div className="buttonCont">
-								<Link className="button" href="/training/1">
-									View Sample Lesson
+								<Link className="button" href="/training/1/1">
+									View Sample Lesson 1
+								</Link>
+								<Link className="button" href="/training/4/1">
+									View Sample Lesson 2
 								</Link>
 								<Link className="button" href="/quote">
 									Buy a Ticket
