@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import styles from "/styles/Training.module.css";
-import { DefaultPage, AccessDenied } from "/training";
+import { DefaultPage, AccessDenied } from "../../training";
 
 import useSWR from "swr";
 
@@ -246,7 +246,7 @@ export default function Page() {
 							<p style={{ color: "green" }}>Your reading has been recorded.</p>
 						</>
 					)}
-					<AccessDenied page={page} id={}/>
+					<AccessDenied page={page} id={id} />
 				</div>
 			</div>
 		</>
