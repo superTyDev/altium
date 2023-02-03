@@ -55,7 +55,8 @@ export default function Contact({ errors, setErrors }) {
 						<CountdownTimer targetDate={new Date("Jul 5, 2023 5:37 PM")} />
 					</div>
 					<p>
-						We value your time and option. Our team would love to hear from you!
+						We value your time and opinion. Our team would love to hear from
+						you!
 					</p>
 				</div>
 
@@ -89,10 +90,19 @@ export default function Contact({ errors, setErrors }) {
 						<p>
 							For further information please contact us with any questions. For
 							anything involving luggage or carry-ons please contact us at{" "}
-							<span>1 800 GET SPACE (438-7723)</span>, or email us at
-							NotMyProblem@gmail.com. Any issues involving booking or refunds
-							please contact us at <span>1 800 GET SPACE (438-7723)</span>, or
-							email us at altiumaero@gmail.com.
+							<span>
+								<a href="tel:+18004387723">1 800 GET SPACE (438-7723)</a>
+							</span>
+							, or email us at
+							<a href="mailto: notmyproblem@gmail.com">
+								NotMyProblem@gmail.com
+							</a>
+							. Any issues involving booking or refunds please contact us at{" "}
+							<span>
+								<a href="tel:+18004387723">1 800 GET SPACE (438-7723)</a>
+							</span>
+							, or email us at
+							<a href="mailto: altiumaero@gmail.com">altiumaero@gmail.com</a>.
 						</p>
 					</div>
 				</div>
