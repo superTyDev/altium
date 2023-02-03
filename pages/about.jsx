@@ -109,9 +109,14 @@ export default function Ships() {
 							<p>
 								The SR 72 Darkhawk is a revolutionary aircraft developed by
 								Lockheed Martin and NASA. It is originally an unmanned, high
-								altitude, supersonic aircraft capable of reaching speeds up to
-								Mach 6. Due to its scram jet engine, it is able to fly to the
-								edge of space in a few hours, making it ideal for space tourism.
+								altitude, <strong>supersonic</strong> aircraft capable of
+								reaching speeds up to Mach 6. Due to its scram jet engine, it is
+								able to fly to the edge of space in a few hours, making it ideal
+								for space tourism.
+							</p>
+							<p>
+								Length: 35 M<br />
+								Thrust: 5,100 kN
 							</p>
 							<div className="buttonCont">
 								<Link href="/quote" className="button">
@@ -162,7 +167,11 @@ export default function Ships() {
 								moon and beyond. With its powerful engines and advanced
 								navigation systems, the Gibraltar is Altium&apos;s medium
 								distance shuttle. This shuttle is optimized for quick trips to
-								the ISS or longer distance flights.
+								the ISS or longer <strong>distance</strong> flights.
+							</p>
+							<p>
+								Length: 50 M<br />
+								Thrust: 10,050 kN
 							</p>
 							<div className="buttonCont">
 								<Link href="/quote" className="button">
@@ -204,11 +213,15 @@ export default function Ships() {
 						<div className={styles.altCont}>
 							<h2>STS Malta</h2>
 							<p>
-								Altium&apos;s largest rocket is designed to carry payloads to
-								the moon and beyond. With its state-of-the-art ion trust
-								technology, the STS Malta is the perfect choice for those
-								looking to explore the depths of space. With its comfortable
-								interior, you can enjoy the journey in style.
+								Altium&apos;s <strong>largest</strong> rocket is designed to
+								carry payloads to the moon and beyond. With its state-of-the-art
+								ion trust technology, the STS Malta is the perfect choice for
+								those looking to explore the depths of space. With its
+								comfortable interior, you can enjoy the journey in style.
+							</p>
+							<p>
+								Length: 110 M<br />
+								Thrust: 35,100 kN
 							</p>
 							<div className="buttonCont">
 								<Link href="/quote" className="button">

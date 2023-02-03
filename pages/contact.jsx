@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "../styles/Contact.module.css";
 import lStyles from "../styles/Login.module.css";
+import CountdownTimer from "./useCountdown";
 
 export default function Contact({ errors, setErrors }) {
 	const [email, setEmail] = useState("");
@@ -46,6 +47,15 @@ export default function Contact({ errors, setErrors }) {
 			<div className="navSpacer"></div>
 			<div className="page">
 				<h1>Contact Us</h1>
+
+				<div className={styles.countdownTimer}>
+					Next Rep Available In:
+					<br />
+					<CountdownTimer targetDate={new Date("Jul 5, 2023 5:37 PM")} />
+				</div>
+				<p>
+					We value your time and option. Our team would love to hear from you!
+				</p>
 
 				<div className={styles.cardCont}>
 					<div className={styles.card}>

@@ -7,7 +7,6 @@ import "../styles/globals.css";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./../components/fbauth.js";
-import { redirect } from "next/dist/server/api-utils";
 
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
@@ -185,8 +184,13 @@ export default function App({ Component, pageProps }) {
 						</Link>
 					</div>
 					<div>
-						<Link href="/Contact" onClick={closeNavLink}>
+						<Link href="/contact" onClick={closeNavLink}>
 							Contact<i>call</i>
+						</Link>
+					</div>
+					<div>
+						<Link href="/training/0" onClick={closeNavLink}>
+							Training<i>menu_book</i>
 						</Link>
 					</div>
 					<div>

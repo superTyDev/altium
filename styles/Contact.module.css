@@ -24,3 +24,9 @@
     width: 100%;
     max-width: unset;
 }
+
+.countdownTimer {
+    font-size: 130%;
+    padding: 5px;
+    /* padding-bottom: 25px; */
+}

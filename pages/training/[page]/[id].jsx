@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
 import styles from "/styles/Training.module.css";
+import { DefaultPage, AccessDenied } from "/training";
 
 import useSWR from "swr";
 
@@ -99,27 +100,7 @@ export default function Page() {
 				<div className={styles.lessonBody}>
 					{error && <div>Failed to Load.</div>}
 					{!data && <div>Loading</div>}
-					{parseInt(page) === 0 && (
-						<>
-							<h1>Training</h1>
-							<p>
-								Get easy access to training material. Our two week course
-								provides you with all the information you&apos;ll need to safely
-								travel to space.
-							</p>
-							<div className="buttonCont">
-								<Link className="button" href="/training/1/1">
-									View Sample Lesson 1
-								</Link>
-								<Link className="button" href="/training/4/1">
-									View Sample Lesson 2
-								</Link>
-								<Link className="button" href="/quote">
-									Buy a Ticket
-								</Link>
-							</div>
-						</>
-					)}
+					{parseInt(page) === 0 && <DefaultPage />}
 					{parseInt(page) === 1 && parseInt(id) === 1 && (
 						<>
 							<h1>Packing</h1>
@@ -265,26 +246,7 @@ export default function Page() {
 							<p style={{ color: "green" }}>Your reading has been recorded.</p>
 						</>
 					)}
-					{!(parseInt(page) in [1, 4]) ||
-						(parseInt(id) != 1 && (
-							<>
-								<h1>Access Denied</h1>
-								<p>
-									Please sign up to view the rest of the training material.
-									<br />
-									If you are signed up, please login. If you have any questions,
-									please reach out.
-								</p>
-								<div className="buttonCont">
-									<Link className="button" href="/training/1">
-										View Sample Lesson
-									</Link>
-									<Link className="button" href="/quote">
-										Buy a Ticket
-									</Link>
-								</div>
-							</>
-						))}
+					<AccessDenied page={page} id={}/>
 				</div>
 			</div>
 		</>

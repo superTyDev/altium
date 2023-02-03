@@ -4,6 +4,8 @@ import Script from "next/script";
 import React, { useEffect, useRef, useState } from "react";
 
 import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import CountdownTimer from "./useCountdown";
 import styles from "../styles/Index.module.css";
 
 function rotateRocket(evt) {
@@ -86,58 +88,38 @@ function convertToSmoothLinks() {
 	});
 }
 
-const useOnScreen = (ref, rootMargin = "0px") => {
-	const [isVisible, setIsVisible] = useState(false);
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				setIsVisible(entry.isIntersecting);
-			},
-			{
-				rootMargin,
-			}
-		);
-
-		const currentElement = ref?.current;
-
-		if (currentElement) {
-			observer.observe(currentElement);
-		}
-
-		return () => {
-			observer.unobserve(currentElement);
-		};
-	}, []);
-
-	return isVisible;
+const squareVariants = {
+	visible: {
+		opacity: 1,
+		scale: 1,
+		// translateX: 0,
+		// transform: "translateX(0)",
+		transition: { duration: 1 },
+	},
+	hidden: {
+		opacity: 0,
+		scale: 0.8,
+		// translateX: -40,
+		// transform: "translateX(-100vh)",
+		// transition: { duration: 1 },
+	},
 };
 
-const LazyShow = ({ children, className }) => {
+const ScrollShow = ({ children, className }) => {
 	const controls = useAnimation();
-	const rootRef = useRef();
-	const onScreen = useOnScreen(rootRef);
+	const [ref, inView] = useInView();
 	useEffect(() => {
-		if (onScreen) {
-			controls.start({
-				x: 0,
-				opacity: 1,
-				transition: {
-					duration: 0.5,
-					ease: "easeOut",
-				},
-			});
+		if (inView) {
+			controls.start("visible");
 		}
-	}, [onScreen, controls]);
-
-	// const initPos = className.includes(styles.left) ? -800 : 800;
-
+	}, [controls, inView]);
 	return (
 		<motion.div
-			className={`lazy-div ${className}`}
-			ref={rootRef}
-			initial={{ opacity: 0, x: -800 }}
+			ref={ref}
 			animate={controls}
+			initial="hidden"
+			variants={squareVariants}
+			className={className}
 		>
 			{children}
 		</motion.div>
@@ -200,7 +182,7 @@ export default function Home() {
 					<h2>Your Journey</h2>
 					<p>Scroll Down to Start</p>
 				</div>
-				<LazyShow>
+				<ScrollShow>
 					<div className={styles.stepsShips}>
 						<div className={styles.text}>
 							<h3>Select a Craft</h3>
@@ -214,6 +196,7 @@ export default function Home() {
 								width={400}
 								height={400}
 								onClick={(e) => setShip("Darkhawk")}
+								className={ship == "Darkhawk" ? styles.center : ""}
 							/>
 							<p>SR 72 Darkhawk</p>
 						</div>
@@ -223,6 +206,7 @@ export default function Home() {
 								alt="Discovery Space Shuttle Line Drawing"
 								width={400}
 								height={400}
+								className={ship == "Gibraltar" ? styles.center : ""}
 								onClick={(e) => setShip("Gibraltar")}
 							/>
 							<p>Gibraltar</p>
@@ -233,6 +217,7 @@ export default function Home() {
 								alt="Saturn V Rocket Line Drawing"
 								width={400}
 								height={400}
+								className={ship == "Malta" ? styles.center : ""}
 								onClick={(e) => setShip("Malta")}
 							/>
 							<p>Malta</p>
@@ -241,13 +226,13 @@ export default function Home() {
 							<Link className="button" href="#stepCont">
 								See Trips
 							</Link>
-							<Link className="button" href={`/about#${ship}`}>
+							<Link className="button pulse" href={`/about#${ship}`} key={ship}>
 								Learn About {ship}
 							</Link>
 						</div>
 					</div>
-				</LazyShow>
-				<LazyShow>
+				</ScrollShow>
+				<ScrollShow>
 					<div className={styles.stepsShips}>
 						<div className={styles.text}>
 							<h3>View Missions</h3>
@@ -272,22 +257,6 @@ export default function Home() {
 						</div>
 						<div className={styles.bigCenterCont}>
 							<Image
-								src={"moon.svg"}
-								alt="Moon Line Drawing"
-								className={`${styles.bigCenter} ${
-									ship == "Malta" ? styles.center : ""
-								}`}
-								width={400}
-								height={400}
-								onClick={(e) => {
-									setMission(["Moon", 0]);
-									setShip("Malta");
-								}}
-							/>
-							<p>Moon</p>
-						</div>
-						<div className={styles.bigCenterCont}>
-							<Image
 								src={"iss.svg"}
 								alt="ISS Line Drawing"
 								className={`${styles.bigCenter} ${
@@ -302,11 +271,31 @@ export default function Home() {
 							/>
 							<p>ISS</p>
 						</div>
+						<div className={styles.bigCenterCont}>
+							<Image
+								src={"moon.svg"}
+								alt="Moon Line Drawing"
+								className={`${styles.bigCenter} ${
+									ship == "Malta" ? styles.center : ""
+								}`}
+								width={400}
+								height={400}
+								onClick={(e) => {
+									setMission(["Moon", 0]);
+									setShip("Malta");
+								}}
+							/>
+							<p>Moon</p>
+						</div>
 						<div className={`buttonCont ${styles.buttonCont}`}>
 							<Link className="button" href="#stepCont">
 								Get Signed Up
 							</Link>
-							<Link className="button" href={`/flights#${mission[1]}`}>
+							<Link
+								className="button pulse"
+								href={`/flights#${mission[1]}`}
+								key={mission}
+							>
 								Discover the {mission[0]}
 							</Link>
 							<div className={styles.text}>
@@ -315,7 +304,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-				</LazyShow>
+				</ScrollShow>
 			</div>
 
 			<div className={styles.steps} id="stepCont">
@@ -338,12 +327,27 @@ export default function Home() {
 					<circle cx="10" cy="10" r="5" />
 				</svg>
 				<div id="steps">
-					<LazyShow className={styles.text + " " + styles.left}>
+					<ScrollShow className={styles.text + " " + styles.left}>
 						<h3>Schedule a Consultation</h3>
 						<p>
-							Going to space is an individual matter. We provide free, no
-							commitment consultations to help you realize your goals.
+							Going to space is an individual matter. We are committed to
+							providing free, no commitment consultations to help you realize
+							your goals.
 						</p>
+						<div>
+							Next Available Rep In
+							<br />
+							<div className={styles.countdownTimer}>
+								<strong>
+									<CountdownTimer
+										targetDate={new Date("Jul 5, 2023 5:37 PM")}
+									/>
+								</strong>
+								<Link href="/contact">
+									<i>phone</i>
+								</Link>
+							</div>
+						</div>
 						<div className="buttonCont">
 							<Link href="/quote#consult" className="button">
 								Schedule Consultation
@@ -353,10 +357,10 @@ export default function Home() {
 							</Link>
 						</div>
 						{/* <Image src="https://cdn.glitch.global/3e382f9d-a3b6-424b-966a-b4704cfa4afc/astrosuit.svg?v=1670892262011" alt="Space Suit" height="400px" /> */}
-					</LazyShow>
+					</ScrollShow>
 				</div>
 				<div id="steps2">
-					<LazyShow className={styles.text + " " + styles.right}>
+					<ScrollShow className={styles.text + " " + styles.right}>
 						<h3>Purchase Tickets</h3>
 						<p>
 							Get tickets for a mission that works for you. We offer three
@@ -370,10 +374,10 @@ export default function Home() {
 								Next Step
 							</Link>
 						</div>
-					</LazyShow>
+					</ScrollShow>
 				</div>
 				<div id="steps3">
-					<LazyShow className={styles.text + " " + styles.left}>
+					<ScrollShow className={styles.text + " " + styles.left}>
 						<h3>Fitness & Training Course</h3>
 						<p>
 							To make sure you have the best time, we developed a short course
@@ -387,10 +391,10 @@ export default function Home() {
 								Next Step
 							</Link>
 						</div>
-					</LazyShow>
+					</ScrollShow>
 				</div>
 				<div id="steps4">
-					<LazyShow className={styles.text + " " + styles.right}>
+					<ScrollShow className={styles.text + " " + styles.right}>
 						<h3>Countdown</h3>
 						<p>
 							That&apos;s it! It&apos;s launch day and you&apos;re ready. Arrive
@@ -408,7 +412,7 @@ export default function Home() {
 								<i>arrow_forward</i>
 							</Link>
 						</div>
-					</LazyShow>
+					</ScrollShow>
 				</div>
 			</div>
 			<div className={styles.packing} id="packing">
@@ -759,11 +763,11 @@ export default function Home() {
 					through in our flights or view upcoming missions.
 				</p>
 				<div className="buttonCont">
-					<Link href="#steps" className="button">
-						What&apos;s Entailed?
+					<Link href="/flights" className="button">
+						Explore Flights
 					</Link>
-					<Link href="/quote" className="button">
-						View Missions
+					<Link href="/about#ships" className="button">
+						View Ships
 					</Link>
 				</div>
 			</div>
