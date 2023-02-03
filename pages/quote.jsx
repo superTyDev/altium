@@ -464,8 +464,8 @@ export default function Quote({ errors, setErrors }) {
 								</div>
 								<p>
 									Email{" "}
-									<Link href="mailto:notMyProblem@gmail.com">
-										NotMyProblem@gmail.com
+									<Link href="mailto:AltiumAero@gmail.com">
+										AltiumAero@gmail.com
 									</Link>{" "}
 									for group pricing.
 								</p>
