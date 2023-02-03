@@ -155,7 +155,7 @@ export default function Ships() {
 									loading="lazy"
 								/>
 								<p className="legend">
-									Gibraltar&Aapos;s Space Launch Vehicle (SLV)
+									Gibraltar&apos;s Space Launch Vehicle (SLV)
 								</p>
 							</div>
 						</Carousel>

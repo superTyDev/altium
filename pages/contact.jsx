@@ -46,22 +46,24 @@ export default function Contact({ errors, setErrors }) {
 		<>
 			<div className="navSpacer"></div>
 			<div className="page">
-				<h1>Contact Us</h1>
+				<div style={{ textAlign: "center" }}>
+					<h1>Contact Us</h1>
 
-				<div className={styles.countdownTimer}>
-					Next Rep Available In:
-					<br />
-					<CountdownTimer targetDate={new Date("Jul 5, 2023 5:37 PM")} />
+					<div className={styles.countdownTimer}>
+						Next Rep Available In:
+						<br />
+						<CountdownTimer targetDate={new Date("Jul 5, 2023 5:37 PM")} />
+					</div>
+					<p>
+						We value your time and option. Our team would love to hear from you!
+					</p>
 				</div>
-				<p>
-					We value your time and option. Our team would love to hear from you!
-				</p>
 
 				<div className={styles.cardCont}>
 					<div className={styles.card}>
 						<h2>Email</h2>
 						<p>
-							Custumer Service:{" "}
+							Customer Service:{" "}
 							<a href="mailto: altiumaero@gmail.com">altiumaero@gmail.com</a>
 						</p>
 						<p>
@@ -86,7 +88,7 @@ export default function Contact({ errors, setErrors }) {
 					<div className={`${styles.card} ${styles.fullWidth}`}>
 						<p>
 							For further information please contact us with any questions. For
-							anything involving lugage or carry ons please contact us at{" "}
+							anything involving luggage or carry ons please contact us at{" "}
 							<span>1 800 GET SPACE (438-7723)</span>, or email us at
 							NotMyProblem@gmail.com. Any issues involving booking or refunds
 							please contact us at <span>1 800 GET SPACE (438-7723)</span>, or
@@ -138,7 +140,7 @@ export default function Contact({ errors, setErrors }) {
 								By submitting you agree to release your words for Altium&apos;s
 								use. See <Link href="/cites">Terms of Use</Link> for more
 								information. By entering an optional email address you agree to
-								recieve at max one email from Altium unless you agree further in
+								receive at max one email from Altium unless you agree further in
 								subsequent conversation.
 							</p>
 						</>

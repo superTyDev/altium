@@ -140,7 +140,7 @@ export default function Flights() {
 				height={1080}
 			/>
 			<div className="page">
-				<h1>Flights</h1>
+				<h1 style={{ textAlign: "center" }}>Flights</h1>
 				<Cards cardArray={cardArray} setCardSelected={setCardSelected} />
 				<LargeCard cardArray={cardArray} cardSelected={cardSelected} />
 				<h2 id="dates">Upcoming Dates</h2>
