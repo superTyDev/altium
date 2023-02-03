@@ -214,7 +214,7 @@ export default function Ships() {
 							<p>
 								Altium&apos;s <strong>largest</strong> rocket is designed to
 								carry payloads to the moon and beyond. With its state-of-the-art
-								ion trust technology, the STS Malta is the perfect choice for
+								ion thrust technology, the STS Malta is the perfect choice for
 								those looking to explore the depths of space. With its
 								comfortable interior, you can enjoy the journey in style.
 							</p>
