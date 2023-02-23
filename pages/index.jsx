@@ -57,22 +57,30 @@ function svgAnimation() {
 	var triangle = document.querySelector("path");
 	var stepCont = document.querySelector("#stepCont");
 	var stepContHeight = stepCont?.getBoundingClientRect().height; // no need to recalc
-
 	if (triangle && stepCont) {
 		triangle.style.strokeDashoffset = 1;
 
-		window.addEventListener("scroll", () => {
-			var scrollpercent =
-				(document.body.scrollTop + document.documentElement.scrollTop) /
-				(document.documentElement.scrollHeight -
-					document.documentElement.clientHeight);
-
-			triangle.style.strokeDashoffset =
-				1.05 -
-				(-stepCont?.getBoundingClientRect().top +
-					document.documentElement.clientHeight) /
-					stepContHeight;
-		});
+		window.addEventListener(
+			"scroll",
+			() => {
+				var scrollpercent =
+					(document.body.scrollTop + document.documentElement.scrollTop) /
+					(document.documentElement.scrollHeight -
+						document.documentElement.clientHeight);
+				console.log(
+					1.05 -
+						(-stepCont?.getBoundingClientRect().top +
+							document.documentElement.clientHeight) /
+							stepContHeight
+				);
+				triangle.style.strokeDashoffset =
+					1.05 -
+					(-stepCont?.getBoundingClientRect().top +
+						document.documentElement.clientHeight) /
+						stepContHeight;
+			},
+			true
+		);
 	}
 }
 
