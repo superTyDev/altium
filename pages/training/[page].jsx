@@ -24,7 +24,7 @@ export default function Page() {
 	const router = useRouter();
 	const { page } = router.query;
 
-	const { data, error } = useSWR("/api/lessondata", fetcher);
+	const { data, error } = useSWR("/api/staticdata", fetcher);
 
 	return (
 		<>

@@ -67,12 +67,7 @@ function svgAnimation() {
 					(document.body.scrollTop + document.documentElement.scrollTop) /
 					(document.documentElement.scrollHeight -
 						document.documentElement.clientHeight);
-				console.log(
-					1.05 -
-						(-stepCont?.getBoundingClientRect().top +
-							document.documentElement.clientHeight) /
-							stepContHeight
-				);
+
 				triangle.style.strokeDashoffset =
 					1.05 -
 					(-stepCont?.getBoundingClientRect().top +

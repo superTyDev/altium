@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 
-// import styles from "/styles/Training.module.css";
+import styles from "/styles/Training.module.css";
 
 export const fetcher = (url) => fetch(url).then((res) => res.json());
 
